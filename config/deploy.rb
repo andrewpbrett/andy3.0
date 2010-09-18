@@ -6,7 +6,7 @@ set :deploy_to, "/var/www/#{application}"
 set :use_sudo, true
 
 set :scm, :git
-set :repository,  "git@github.com:andrewpbrett/Andy-3.0.git"
+set :repository,  "git@github.com:andrewpbrett/andy3.0.git"
 set :branch, 'master'
 
 role :web, domain                         
