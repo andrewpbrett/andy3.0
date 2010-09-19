@@ -1,0 +1,10 @@
+<!DOCTYPE html>
+%html
+	%head
+		%title Andy Brett
+		= stylesheet_link_tag :all
+		= javascript_include_tag "http://ajax.googleapis.com/ajax/libs/jquery/1.4.1/jquery.min.js"
+		= csrf_meta_tag
+	%body
+		#container
+			= yield
