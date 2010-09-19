@@ -4,7 +4,26 @@
 		%title Andy Brett
 		= stylesheet_link_tag :all
 		= javascript_include_tag "http://ajax.googleapis.com/ajax/libs/jquery/1.4.1/jquery.min.js"
+		= javascript_include_tag 'rails'
 		= csrf_meta_tag
 	%body
 		#container
-			= yield
+			#content
+				%img#profile_pic{:src => "/images/andy_brett.png"}
+				%h1#summary 
+					%span#name Andy Brett 
+					is a writer, engineer, and athlete living in Silicon Valley
+				#nav
+					%ul
+						%li.selected
+							%a{:href => ""} Writing
+						%li
+							%a{:href => ""} Readings
+						%li
+							%a{:href => ""} Projects
+						%li
+							%a{:href => ""} Photos
+						%li.last
+							%a{:href => ""} About							
+				.clear
+				= yield

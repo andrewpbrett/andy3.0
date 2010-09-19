@@ -1,6 +1,55 @@
+body {
+  font-family: Helvetica;
+  color: #333f62; }
+
+a:-webkit-any-link {
+  text-decoration: none;
+  color: inherit; }
+
+.clear {
+  clear: both; }
+
 #container {
   margin-left: auto;
   margin-right: auto;
-  width: 800px;
-  height: 600px;
-  border: 1px solid black; }
+  margin-top: 30px;
+  width: 750px;
+  height: 700px;
+  padding: 20px; }
+
+#content {
+  border: 2px solid #333f62;
+  height: 700px; }
+  #content img#profile_pic {
+    float: left;
+    margin-left: -20px;
+    margin-top: -20px; }
+
+h1 {
+  font-size: 20px;
+  font-weight: normal; }
+
+h1#summary {
+  float: right;
+  margin: 40px 10px;
+  padding: 10px; }
+
+#name {
+  font-weight: bold; }
+
+#nav {
+  font-size: 20px;
+  float: right;
+  margin: 5px 10px;
+  padding: 10px; }
+  #nav ul {
+    padding: 0;
+    margin: 0; }
+    #nav ul li {
+      float: left;
+      list-style: none;
+      margin: 0px 10px; }
+    #nav ul li.last {
+      margin-right: 0px; }
+    #nav ul li.selected {
+      border-bottom: 2px solid #333f62; }
