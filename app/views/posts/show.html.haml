@@ -1,6 +1,6 @@
 #item_container
 	#post_container
-		- if @post.title
+		- unless @post.title.blank?
 			%h2#post_title
 				%a{ :href => "/#{@post.permalink}" }= @post.title
 			.clear
