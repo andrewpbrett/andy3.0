@@ -35,7 +35,12 @@ namespace :deploy do
   task :dbconfig do
     run "cp #{shared_path}/config/database.yml #{current_path}/config/database.yml"
   end
+  desc "Copy pwd.yml"
+  task :pwdconfig do
+    run "cp #{shared_path}/config/pwd.yml #{current_path}/config/database.yml"
+  end
 end
 
 after "deploy:update_code", "deploy:chown"
 after "deploy", "deploy:dbconfig"
+after "deploy", "deploy:pwdconfig"
