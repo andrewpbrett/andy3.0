@@ -1,1 +1,11 @@
-= @post.title
+#item_container
+	#post_container
+		- if @post.title
+			%h2#post_title
+				%a{ :href => "/#{@post.permalink}" }= @post.title
+			.clear
+			#post_date
+				%a{ :href => "/#{@post.permalink}" }= @post.created_at.strftime("%b %d, %Y")
+			.clear
+		#post_body
+			=raw @post.body

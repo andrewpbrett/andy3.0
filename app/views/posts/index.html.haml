@@ -1,0 +1,8 @@
+#item_container
+	#posts_container
+		- @posts.each do |post|
+			%a{ :href => "/#{post.permalink}" }
+				= post.published_at.strftime("%b %d, %Y")
+				\-
+				= post.title
+			.clear

@@ -1,0 +1,17 @@
+= f.label :title
+.clear
+= f.text_field :title
+.clear.medium
+= f.label :permalink
+.clear
+= f.text_field :permalink
+.clear.medium
+= f.label :status
+.clear
+= f.select :status, [["Published", "published"], ["Draft", "draft"]]
+.clear.medium			
+= f.label :body
+.clear
+= f.text_area :body, :cols => 80
+.clear.medium
+= f.submit

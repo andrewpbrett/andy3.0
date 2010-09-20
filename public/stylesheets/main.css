@@ -1,3 +1,6 @@
+html {
+  background-color: #ebf2f8; }
+
 body {
   font-family: Helvetica;
   color: #333f62; }
@@ -9,6 +12,12 @@ a:-webkit-any-link {
 .clear {
   clear: both; }
 
+.clear.small {
+  height: 10px; }
+
+.clear.medium {
+  height: 20px; }
+
 #container {
   margin-left: auto;
   margin-right: auto;
@@ -18,8 +27,7 @@ a:-webkit-any-link {
   padding: 20px; }
 
 #content {
-  border: 2px solid #333f62;
-  height: 700px; }
+  border: 2px solid #333f62; }
   #content img#profile_pic {
     float: left;
     margin-left: -20px;
@@ -31,7 +39,7 @@ h1 {
 
 h1#summary {
   float: right;
-  margin: 40px 10px;
+  margin: 46px 10px;
   padding: 10px; }
 
 #name {
@@ -40,8 +48,8 @@ h1#summary {
 #nav {
   font-size: 20px;
   float: right;
-  margin: 5px 10px;
-  padding: 10px; }
+  margin: 10px 10px 0px;
+  padding: 10px 10px 0px; }
   #nav ul {
     padding: 0;
     margin: 0; }
@@ -53,3 +61,44 @@ h1#summary {
       margin-right: 0px; }
     #nav ul li.selected {
       border-bottom: 2px solid #333f62; }
+
+#item_container {
+  padding: 10px 20px; }
+
+#post_container, #notfound_container, #newpost_container, #flashnotice_container {
+  width: 550px;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 20px;
+  line-height: 28px;
+  display: block; }
+
+#posts_container {
+  padding: 10px 0px;
+  margin: 0px; }
+
+#notfound_container {
+  width: 520px;
+  margin-top: 40px;
+  text-align: center; }
+
+#newpost_container, #flashnotice_container {
+  width: 630px; }
+
+#flashnotice_container {
+  color: green; }
+
+h2#post_title {
+  margin: 0;
+  float: left;
+  font-size: 20px; }
+
+#post_date {
+  margin: 10px 0px; }
+
+#post_header #post_date {
+  float: right; }
+
+#post_body a {
+  color: #0b4e00;
+  font-weight: bold; }

@@ -1,0 +1,6 @@
+#item_container
+	#flashnotice_container
+		= flash[:notice]
+	#newpost_container
+		= form_for @post, :as => :post, :url => { :action => :update } do |f|
+			= render :partial => "post_form", :locals => { :f => f }
