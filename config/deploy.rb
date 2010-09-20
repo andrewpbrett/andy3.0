@@ -37,7 +37,7 @@ namespace :deploy do
   end
   desc "Copy pwd.yml"
   task :pwdconfig do
-    run "cp #{shared_path}/config/pwd.yml #{current_path}/config/database.yml"
+    run "cp #{shared_path}/config/pwd.yml #{current_path}/config/pwd.yml"
   end
 end
 
