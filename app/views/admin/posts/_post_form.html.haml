@@ -9,7 +9,12 @@
 = f.label :status
 .clear
 = f.select :status, [["Published", "published"], ["Draft", "draft"]]
-.clear.medium			
+.clear.medium
+= f.label :published_time
+.clear
+= f.date_select :published_at
+= f.time_select :published_at, {:ignore_date => true}
+.clear.medium
 = f.label :body
 .clear
 = f.text_area :body, :cols => 80

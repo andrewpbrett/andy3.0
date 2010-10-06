@@ -44,3 +44,24 @@ end
 after "deploy:update_code", "deploy:chown"
 after "deploy", "deploy:dbconfig"
 after "deploy", "deploy:pwdconfig"
+
+namespace :db do
+  namespace :sync do
+    desc "copy local db up to production"
+    task :up do
+      db = YAML.load_file("config/database.yml")      
+      prod = db["production"]["password"]
+      system "mysqldump -u root -p andy30_development > ~/andy30.sql"
+      system "scp ~/andy30.sql #{user}@#{domain}:~/"
+      run "mysql -u root -p#{prod} andy30_production < ~/andy30.sql"
+    end
+    desc "copy production db down to local"
+    task :down do
+      db = YAML.load_file("config/database.yml")      
+      prod = db["production"]["password"]      
+      run "mysqldump -u root -p#{prod} andy30_production > ~/andy30.sql"
+      system "scp #{user}@#{domain}:~/andy30.sql ~/andy30.sql"
+      system "mysql -u root -p andy30_development < ~/andy30.sql"
+    end
+  end
+end

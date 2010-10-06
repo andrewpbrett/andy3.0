@@ -1,8 +1,12 @@
 #item_container
 	#posts_container
+		All
+		= @posts.size 
+		entries
+		.clear.medium
 		- @posts.each do |post|
 			%a{ :href => "/#{post.permalink}" }
 				= post.published_at.strftime("%b %d, %Y")
 				\-
 				= post.title
-			.clear
+			.clear.medium

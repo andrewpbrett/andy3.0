@@ -1,6 +1,6 @@
 class PostsController < ApplicationController
   def index
-    @posts = Post.all_published
+    @posts = Post.for_blog
   end
   
   def show

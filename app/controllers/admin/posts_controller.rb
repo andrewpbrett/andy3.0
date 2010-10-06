@@ -8,8 +8,6 @@ class Admin::PostsController < ApplicationController
   def create
     @post = Post.create(params[:post])
     
-    @post.published_at = Time.now if @post.status = "published"
-    
     if @post.save
       flash[:notice] = "Successfully saved"
     end

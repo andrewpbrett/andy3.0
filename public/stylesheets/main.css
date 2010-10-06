@@ -66,6 +66,7 @@ h1#summary {
   padding: 10px 20px; }
 
 #post_container, #notfound_container, #newpost_container, #flashnotice_container {
+  min-height: 500px;
   width: 550px;
   margin-left: auto;
   margin-right: auto;
