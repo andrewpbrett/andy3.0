@@ -50,6 +50,8 @@ namespace :db do
     desc "copy local db up to production"
     task :up do
       db = YAML.load_file("config/database.yml")      
+      # TODO this spits out the pwd in the terminal. be careful of people standing
+      # over your shoulder
       prod = db["production"]["password"]
       system "mysqldump -u root -p andy30_development > ~/andy30.sql"
       system "scp ~/andy30.sql #{user}@#{domain}:~/"

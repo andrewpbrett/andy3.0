@@ -5,7 +5,7 @@
 				%a{ :href => "/#{@post.permalink}" }= @post.title
 			.clear
 			#post_date
-				%a{ :href => "/#{@post.permalink}" }= @post.created_at.strftime("%b %d, %Y")
+				%a{ :href => "/#{@post.permalink}" }= @post.published_at.strftime("%b %d, %Y")
 			.clear
 		#post_body
 			=raw @post.body
