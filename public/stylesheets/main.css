@@ -87,6 +87,7 @@ h1#summary {
   width: 630px; }
 
 #flashnotice_container {
+  min-height: 0;
   color: green; }
 
 h2#post_title {
