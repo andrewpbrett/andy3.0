@@ -2,6 +2,7 @@
 %html
 	%head
 		%title Andy Brett
+		%link{:rel => "shortcut icon", :type => "image/png", :href => "/favicon.png"}
 		= stylesheet_link_tag :all
 		= javascript_include_tag "http://ajax.googleapis.com/ajax/libs/jquery/1.4.1/jquery.min.js", 'rails', 'application'
 		= csrf_meta_tag
@@ -29,3 +30,4 @@
 							%a{:href => "/about"} About							
 				.clear
 				= yield
+			#footer

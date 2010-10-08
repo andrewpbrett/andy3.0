@@ -1,6 +1,10 @@
 class Admin::PostsController < ApplicationController
   before_filter :authenticate  
   
+  def index
+    @posts = Post.all
+  end  
+  
   def new
     @post = Post.new
   end
@@ -16,7 +20,8 @@ class Admin::PostsController < ApplicationController
   end
 
   def edit
-    @post = Post.find(params[:id])
+    @post = Post.find(params[:id]) if params[:id]
+    @post ||= Post.find_by_permalink(params[:permalink])
   end
   
   def update
@@ -34,7 +39,9 @@ class Admin::PostsController < ApplicationController
   def authenticate
     pwd = YAML.load_file("config/pwd.yml")
     authenticate_or_request_with_http_basic do |user, pass|
-      user == "andy" && pass == pwd["andy"]
+      auth = (user == "andy" && pass == pwd["andy"])
+      @authenticated = true
+      auth
     end
   end  
 end

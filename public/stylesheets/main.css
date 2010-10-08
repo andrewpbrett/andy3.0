@@ -104,3 +104,8 @@ h2#post_title {
 #post_body a {
   color: #0b4e00;
   font-weight: bold; }
+
+#footer {
+  padding: 10px 0px;
+  text-align: right;
+  height: 30px; }
