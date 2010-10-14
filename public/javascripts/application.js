@@ -4,6 +4,7 @@ $(document).ready(function(){
 		$("#writing").addClass('selected');
 	}
 	else{
-		e.addClass('selected');
+		$("#" + path).addClass('selected');
+		document.title = "Andy Brett | " + path.charAt(0).toUpperCase() + path.slice(1)
 	}
 });

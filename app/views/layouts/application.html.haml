@@ -1,8 +1,12 @@
 !!! 5
 %html
 	%head
-		%title Andy Brett
-		%link{:rel => "shortcut icon", :type => "image/png", :href => "/favicon.png"}
+		%title
+			= @page_title
+		%link{ :rel => "shortcut icon", :type => "image/png", :href => "/favicon.png" }
+		%meta{ :name => "google-site-verification", :content => "dPYG0gqQlcAXqTFAg8nZpvV-7wx51ZRc5D096cVHw7c" }
+		%meta{ :name => "verify-v1", :content => "GACJqKSgAOuYP5m5PFvn0joQ93sv9TkbfyKQUM4quXk=" }
+		%meta{ :content => "Home page for Andy Brett, a writer, engineer, and athlete living in Silicon Valley.", :name => "description" }
 		= stylesheet_link_tag :all
 		= javascript_include_tag "http://ajax.googleapis.com/ajax/libs/jquery/1.4.1/jquery.min.js", 'rails', 'application'
 		= csrf_meta_tag
@@ -31,3 +35,4 @@
 				.clear
 				= yield
 			#footer
+		= render :partial => "application/analytics"
