@@ -9,7 +9,8 @@ class PostsController < ApplicationController
     if !@post
       render :template => "application/notfound"
       @page_title = "Andy Brett"
+    else
+      @page_title = "Andy Brett | " + @post.title
     end
-    @page_title = "Andy Brett | " + @post.title    
   end
 end
