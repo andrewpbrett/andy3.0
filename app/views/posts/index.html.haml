@@ -1,12 +1,19 @@
 #item_container
 	#posts_container
-		All
-		= @posts.size 
-		entries
+		#posts_header
+			All
+			= @posts.size 
+			entries
 		.clear.medium
+		- year = nil
 		- @posts.each do |post|
+			- unless post.published_at.year == year
+				- year = post.published_at.year
+				.posts_subheader
+					= year
+				.clear.medium
 			%a{ :href => "/#{post.permalink}" }
-				= post.published_at.strftime("%b %d, %Y")
-				\-
 				= post.title
+				\-
+				= post.published_at.strftime("%b %d")
 			.clear.medium
