@@ -2,7 +2,7 @@ class Admin::PostsController < ApplicationController
   before_filter :authenticate  
   
   def index
-    @posts = Post.all
+    @posts = Post.all(:order => "published_at DESC")
   end  
   
   def new
