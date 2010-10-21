@@ -1,10 +1,5 @@
 #item_container
 	#posts_container
-		#posts_header
-			All
-			= @posts.size 
-			entries
-		.clear.medium
 		- year = nil
 		- @posts.each do |post|
 			- unless post.published_at.year == year
