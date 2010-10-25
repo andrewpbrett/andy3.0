@@ -6,6 +6,8 @@ Andy30::Application.routes.draw do
   #   match 'products/:id' => 'catalog#view'
   # Keep in mind you can assign values other than :controller and :action
   match 'citingthetext' => 'posts#index'
+  match 'posts.atom' => redirect("/posts.rss")
+  match 'posts' => 'posts#index'
   match '/bio' => redirect("/about")
   match 'writing' => 'posts#index'
   match ':permalink' => 'posts#show'
