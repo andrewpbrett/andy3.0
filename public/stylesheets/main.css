@@ -78,6 +78,10 @@ h1#summary {
   padding: 10px 0px;
   margin: 0px; }
 
+#updates_container {
+  padding: 20px 0px;
+  margin: 0px; }
+
 #posts_header {
   font-weight: bold; }
 
@@ -107,9 +111,13 @@ h2#post_title {
 #post_header #post_date {
   float: right; }
 
-#post_body a {
+#post_body a, #updates_container a {
   color: #0b4e00;
   font-weight: bold; }
+
+#updates_container {
+  width: 500px;
+  margin: auto; }
 
 #footer {
   padding: 10px 0px;

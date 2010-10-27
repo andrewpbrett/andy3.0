@@ -19,4 +19,18 @@ namespace :import do
       end
     end
   end
+  
+  desc "import updates from twitter xml dump"
+  task :twitter => :environment do
+    doc = open("/Users/andybrett/Dropbox/tweets.xml") { |f| Hpricot(f) }
+    tweets = doc.search("//status")
+    tweets.each do |update|
+      dates = update/"created_at"
+      date = dates[0].inner_html
+      coder = HTMLEntities.new      
+      text = update/"text"
+      text = coder.decode(text.inner_html)
+      Update.create(:published_at => date, :body => text)
+    end
+  end
 end

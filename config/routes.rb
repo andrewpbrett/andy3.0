@@ -8,6 +8,7 @@ Andy30::Application.routes.draw do
   match 'citingthetext' => 'posts#index'
   match 'posts.atom' => redirect("/posts.rss")
   match 'posts' => 'posts#index'
+  match 'latest' => 'updates#index'
   match '/bio' => redirect("/about")
   match 'writing' => 'posts#index'
   match ':permalink' => 'posts#show'
@@ -18,6 +19,8 @@ Andy30::Application.routes.draw do
 
   # Sample resource route (maps HTTP verbs to controller actions automatically):
   #   resources :products
+
+
 
   # Sample resource route with options:
   #   resources :products do

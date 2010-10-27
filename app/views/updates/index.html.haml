@@ -1,0 +1,7 @@
+#item_container
+	#updates_container
+		- @updates.each do |update|
+			=raw linkify(update.body)
+			\-
+			= update.published_at.localtime.strftime("%b %d")
+			.clear.medium
