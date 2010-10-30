@@ -1,0 +1,9 @@
+#item_container
+	#newupdate_container
+		= form_for @update, :as => :update, :url => { :action => :create } do |f|
+			= check_box_tag :tweet, value = 1, checked = true
+			= f.label "Post to twitter?"
+			.clear.medium
+			= f.text_area :body, :cols => 65, :rows => 10
+			.clear.medium
+			= f.submit

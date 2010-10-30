@@ -32,16 +32,5 @@ class Admin::PostsController < ApplicationController
     end    
 
     redirect_to :action => :edit    
-  end
-  
-  private
-
-  def authenticate
-    pwd = YAML.load_file("config/pwd.yml")
-    authenticate_or_request_with_http_basic do |user, pass|
-      auth = (user == "andy" && pass == pwd["andy"])
-      @authenticated = true
-      auth
-    end
-  end  
+  end 
 end

@@ -5,6 +5,7 @@ gem 'mysql2'
 gem 'haml'
 gem 'hpricot'
 gem 'htmlentities'
+gem 'oauth'
 
 # Bundle gems for the local environment. Make sure to
 # put test-only gems in this group so their generators
