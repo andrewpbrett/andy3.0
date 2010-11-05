@@ -12,6 +12,7 @@ Andy30::Application.routes.draw do
   match '/bio' => redirect("/about")
   match 'writing' => 'posts#index'
   match ':permalink' => 'posts#show'
+  match 'blog' => 'posts#index'
 
   # Sample of named route:
   #   match 'products/:id/purchase' => 'catalog#purchase', :as => :purchase

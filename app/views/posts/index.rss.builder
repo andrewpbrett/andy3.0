@@ -12,6 +12,7 @@ xml.rss :version => "2.0" do
         xml.pubDate post.published_at.to_s(:rfc822)
         xml.link "http://andybrett.com/" + post.permalink
         xml.guid "http://andybrett.com/" + post.permalink
+        xml.author "Andy Brett"
       end
     end
   end
