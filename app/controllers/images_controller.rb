@@ -10,6 +10,5 @@ class ImagesController < ApplicationController
     @newer_image = @image.newer_photo
     @older_image = @image.older_photo
     render :action => :show
-    # @images = Image.paginate :page => params[:page], :order => 'created_at DESC'
   end
 end

@@ -7,4 +7,3 @@ gem 'hpricot'
 gem 'htmlentities'
 gem 'oauth'
 gem 'paperclip'
-gem "will_paginate", "3.0.pre"
