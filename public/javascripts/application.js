@@ -1,5 +1,8 @@
 $(document).ready(function(){
 	var path = window.location.pathname.substring(1);
+	if(path.indexOf('/') != -1){
+		path = path.substring(0, path.indexOf('/'));
+	}
 	if(path == "" || $("#" + path).html() == null){
 		$("#writing").addClass('selected');
 	}
