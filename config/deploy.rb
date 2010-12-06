@@ -51,6 +51,19 @@ after "deploy", "deploy:dbconfig"
 after "deploy", "deploy:pwdconfig"
 after "deploy", "deploy:symlink_uploads"
 
+namespace :images do
+  namespace :sync do
+    desc "copy local images up to production"
+    task :up do
+      system "scp -r /Users/andybrett/Sites/andy3.0/public/system/* #{user}@#{domain}:/system/"
+    end
+    desc "copy production images down to local"
+    task :down do
+      system "scp -r #{user}@#{domain}:/system/* /Users/andybrett/Sites/andy3.0/public/system"
+    end
+  end
+end
+
 namespace :db do
   namespace :sync do
     desc "copy local db up to production"
