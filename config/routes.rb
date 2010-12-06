@@ -8,11 +8,16 @@ Andy30::Application.routes.draw do
   match 'citingthetext' => 'posts#index'
   match 'posts.atom' => redirect("/posts.rss")
   match 'posts' => 'posts#index'
+  match 'photos' => 'images#index'
   match 'latest' => 'updates#index'
   match '/bio' => redirect("/about")
   match 'writing' => 'posts#index'
   match ':permalink' => 'posts#show'
   match 'blog' => 'posts#index'
+  match 'images/tsa_blog.png' => redirect("/system/images/6/original/TSA_blog.png")  
+  match 'images/tsa.jpg' => redirect("/system/images/5/original/TSA.jpg?1291511977")
+  match 'images/:permalink' => 'images#show', :as => :images
+  
 
   # Sample of named route:
   #   match 'products/:id/purchase' => 'catalog#purchase', :as => :purchase
@@ -58,6 +63,7 @@ Andy30::Application.routes.draw do
   namespace :admin do
     resources :posts
     resources :updates
+    resources :images
   end
 
   # You can have the root of your site routed with "root"

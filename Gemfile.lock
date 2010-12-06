@@ -44,6 +44,9 @@ GEM
     mime-types (1.16)
     mysql2 (0.2.4)
     oauth (0.4.3)
+    paperclip (2.3.5)
+      activerecord
+      activesupport
     polyglot (0.3.1)
     rack (1.2.1)
     rack-mount (0.6.13)
@@ -68,6 +71,7 @@ GEM
     treetop (1.4.9)
       polyglot (>= 0.3.1)
     tzinfo (0.3.23)
+    will_paginate (3.0.pre)
 
 PLATFORMS
   ruby
@@ -78,4 +82,6 @@ DEPENDENCIES
   htmlentities
   mysql2
   oauth
+  paperclip
   rails (= 3.0.3)
+  will_paginate (= 3.0.pre)

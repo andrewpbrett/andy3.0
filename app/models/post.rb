@@ -4,6 +4,6 @@ class Post < ActiveRecord::Base
   
   def self.for_blog
     posts = Post.find(:all, :conditions => { :status => "published" }, :order => "published_at DESC" )
-    posts.reject! { |p| p.title.empty? }
+    posts.reject! { |p| p.title.blank? }
   end
 end

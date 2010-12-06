@@ -39,11 +39,17 @@ namespace :deploy do
   task :pwdconfig do
     run "cp #{shared_path}/config/pwd.yml #{current_path}/config/pwd.yml"
   end
+  desc "Symlink uploads directory"
+  task :symlink_uploads do
+    run "rm -rf #{current_path}/uploads"
+    run "ln -s #{shared_path}/uploads #{current_path}/uploads"
+  end
 end
 
 after "deploy:update_code", "deploy:chown"
 after "deploy", "deploy:dbconfig"
 after "deploy", "deploy:pwdconfig"
+after "deploy", "deploy:symlink_uploads"
 
 namespace :db do
   namespace :sync do
