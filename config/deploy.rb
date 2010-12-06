@@ -55,11 +55,11 @@ namespace :images do
   namespace :sync do
     desc "copy local images up to production"
     task :up do
-      system "scp -r /Users/andybrett/Sites/andy3.0/public/system/* #{user}@#{domain}:/system/"
+      system "scp -r /Users/andybrett/Sites/andy3.0/public/system/* #{user}@#{domain}:#{shared_path}/system/"
     end
     desc "copy production images down to local"
     task :down do
-      system "scp -r #{user}@#{domain}:/system/* /Users/andybrett/Sites/andy3.0/public/system"
+      system "scp -r #{user}@#{domain}:#{shared_path}/system/* /Users/andybrett/Sites/andy3.0/public/system"
     end
   end
 end
