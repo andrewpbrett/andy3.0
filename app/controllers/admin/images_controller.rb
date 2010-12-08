@@ -10,4 +10,6 @@ class Admin::ImagesController < ApplicationController
     flash[:notice] = "Successfully created image" if @image.save
     redirect_to :action => :new
   end
+  def foo
+  end
 end

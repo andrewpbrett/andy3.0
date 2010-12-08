@@ -5,6 +5,7 @@ Andy30::Application.routes.draw do
   # Sample of regular route:
   #   match 'products/:id' => 'catalog#view'
   # Keep in mind you can assign values other than :controller and :action
+  match 'admin/foo' => 'admin/images#foo'
   match 'citingthetext' => 'posts#index'
   match 'posts.atom' => redirect("/posts.rss")
   match 'posts' => 'posts#index'
