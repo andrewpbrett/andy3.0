@@ -1,5 +1,5 @@
 class Image < ActiveRecord::Base
-  has_attached_file :image, :styles => { :medium => "700x700>", :small => "150x150>", :tiny => "75x75>"}
+  has_attached_file :image, :styles => { :medium => "700x700>", :500 => "500x500>", :small => "150x150>", :tiny => "75x75>"}
 
   validates_uniqueness_of :permalink
   
