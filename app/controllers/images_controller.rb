@@ -7,9 +7,7 @@ class ImagesController < ApplicationController
   end
   
   def index
-    @image = Image.last(:conditions => { :photos => true })
-    @newer_image = @image.newer_photo
-    @older_image = @image.older_photo
-    render :action => :show
+    @images = Image.all(:conditions => { :photos => true }, 
+      :order => "created_at DESC")
   end
 end

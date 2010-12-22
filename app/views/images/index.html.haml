@@ -1,0 +1,5 @@
+- @images.each do |image|
+	.image_thumbnail_container
+		%a{ :href => images_url(image.permalink) }	
+			%img{ :src => "#{image.image.url(:small)}" }
+.clear

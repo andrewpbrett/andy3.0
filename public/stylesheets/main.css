@@ -128,6 +128,11 @@ h2#post_title {
   text-align: right;
   height: 30px; }
 
+.image_thumbnail_container {
+  padding: 20px;
+  width: 150px;
+  float: left; }
+
 .image_container {
   padding: 23px; }
   .image_container img {
