@@ -1,5 +1,7 @@
-- @images.each do |image|
+- @images.each_with_index do |image, i|
 	.image_thumbnail_container
 		%a{ :href => images_url(image.permalink) }	
 			%img{ :src => "#{image.image.url(:small)}" }
+	- if i % 4 == 3
+		.clear
 .clear
