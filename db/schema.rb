@@ -10,7 +10,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20101206022618) do
+ActiveRecord::Schema.define(:version => 20110102063700) do
 
   create_table "images", :force => true do |t|
     t.string   "permalink"
@@ -39,6 +39,22 @@ ActiveRecord::Schema.define(:version => 20101206022618) do
     t.datetime "updated_at"
     t.datetime "published_at"
     t.text     "body"
+  end
+
+  create_table "users", :force => true do |t|
+    t.string   "login"
+    t.string   "crypted_password"
+    t.string   "password_salt"
+    t.string   "persistence_token"
+    t.string   "single_access_token"
+    t.string   "perishable_token"
+    t.integer  "login_count",         :default => 0, :null => false
+    t.integer  "failed_login_count",  :default => 0, :null => false
+    t.datetime "last_request_at"
+    t.datetime "current_login_at"
+    t.datetime "last_login_at"
+    t.string   "current_login_ip"
+    t.string   "last_login_ip"
   end
 
 end

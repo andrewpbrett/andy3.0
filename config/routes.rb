@@ -5,7 +5,13 @@ Andy30::Application.routes.draw do
   # Sample of regular route:
   #   match 'products/:id' => 'catalog#view'
   # Keep in mind you can assign values other than :controller and :action
-  match 'admin/foo' => 'admin/images#foo'
+  match 'user_sessions/new' => redirect("/")
+  resources :user_sessions  
+  resources :users  
+  
+  match 'l' => 'user_sessions#new', :as => :login
+  match 'logout' => 'user_sessions#destroy', :as => :logout
+  match 'admin' => 'admin#index', :as => :admin
   match 'citingthetext' => 'posts#index'
   match 'posts.atom' => redirect("/posts.rss")
   match 'posts' => 'posts#index'
@@ -61,6 +67,8 @@ Andy30::Application.routes.draw do
   #     # (app/controllers/admin/products_controller.rb)
   #     resources :products
   #   end
+
+  
   namespace :admin do
     resources :posts
     resources :updates

@@ -33,12 +33,35 @@ class ApplicationController < ActionController::Base
     return access_token
   end  
 
-  def authenticate
-    pwd = YAML.load_file("config/pwd.yml")
-    authenticate_or_request_with_http_basic do |user, pass|
-      auth = (user == "andy" && pass == pwd["andy"])
-      @authenticated = true
-      auth
+  def authorize
+    redirect_to root_url unless current_user == User.andy
+  end  
+  
+  def require_user
+    unless current_user
+      store_location
+      flash[:notice] = "You must be logged in to access this page"
+      redirect_to new_user_session_url
+      return false
     end
+  end
+
+  def require_no_user
+    if current_user
+      store_location
+      flash[:notice] = "You must be logged out to access this page"
+      redirect_to user_home
+      return false
+    end
+  end
+  
+  def current_user_session
+    return @current_user_session if defined?(@current_user_session)
+    @current_user_session = UserSession.find
+  end
+  
+  def current_user
+    return @current_user if defined?(@current_user)
+    @current_user = current_user_session && current_user_session.record
   end  
 end

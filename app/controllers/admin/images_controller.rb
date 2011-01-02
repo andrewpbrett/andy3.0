@@ -1,5 +1,5 @@
 class Admin::ImagesController < ApplicationController
-  before_filter :authenticate
+  before_filter :authorize
   
   def new
     @image = Image.new
@@ -9,7 +9,5 @@ class Admin::ImagesController < ApplicationController
     @image = Image.create(params[:image])
     flash[:notice] = "Successfully created image" if @image.save
     redirect_to :action => :new
-  end
-  def foo
   end
 end

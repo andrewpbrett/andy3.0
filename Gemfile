@@ -7,3 +7,4 @@ gem 'hpricot'
 gem 'htmlentities'
 gem 'oauth'
 gem 'paperclip'
+gem "authlogic", :git => "git://github.com/binarylogic/authlogic.git"
