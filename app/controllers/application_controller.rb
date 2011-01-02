@@ -7,7 +7,7 @@ class ApplicationController < ActionController::Base
   
   private
   
-  def tweet(text)
+  def tweet(text, geolat, geolong, place_id)
     pwd = YAML.load_file("config/pwd.yml")
     consumer_key = pwd["twitter_consumer_key"]
     consumer_secret = pwd["twitter_consumer_secret"]
@@ -16,7 +16,8 @@ class ApplicationController < ActionController::Base
     consumer = OAuth::Consumer.new(consumer_key, consumer_secret, { :site => 'http://api.twitter.com', :scheme => :header })
     access_token = OAuth::AccessToken.new(consumer, access_token, access_token_secret)    
     encoded_text = CGI.escape(text)    
-    response = access_token.request(:post, "http://api.twitter.com/1/statuses/update.json?status=#{encoded_text}&place_id=1d5b19b513a1c9df")
+    response = access_token.request(:post, 
+      "http://api.twitter.com/1/statuses/update.json?status=#{encoded_text}&place_id=#{place_id}&lat=#{geolat}&long=#{geolong}")
   end
   
   def prepare_access_token(oauth_token, oauth_token_secret)

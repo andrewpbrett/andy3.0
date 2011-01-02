@@ -36,6 +36,8 @@
 						%li#about.last
 							%a{:href => "/about"} About							
 				.clear
+				#flashnotice_container
+					= flash[:notice]
 				= yield
 			#footer
 		= render :partial => "application/analytics"

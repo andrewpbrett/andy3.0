@@ -7,7 +7,12 @@ class Admin::ImagesController < ApplicationController
   
   def create
     @image = Image.create(params[:image])
-    flash[:notice] = "Successfully created image" if @image.save
-    redirect_to :action => :new
+    if @image.save
+      flash[:notice] = "Successfully created image"
+      redirect_to photos_path
+    else
+      flash[:notice] = "Couldn't save image"
+      redirect_to :action => :new
+    end
   end
 end

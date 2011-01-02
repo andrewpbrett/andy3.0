@@ -7,4 +7,8 @@ gem 'hpricot'
 gem 'htmlentities'
 gem 'oauth'
 gem 'paperclip'
-gem "authlogic"
+gem 'authlogic'
+
+group :development do
+	gem 'ruby-debug'
+end

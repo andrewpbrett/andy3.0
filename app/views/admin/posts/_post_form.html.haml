@@ -6,14 +6,13 @@
 .clear
 = f.text_field :permalink
 .clear.medium
-= f.label :status
-.clear
-= f.select :status, [["Published", "published"], ["Draft", "draft"]]
+= f.check_box :public
+= f.label :public
 .clear.medium
 = f.label :published_time
 .clear
 = f.date_select :published_at
-= f.time_select :published_at, {:ignore_date => true}
+= f.time_select :published_at, :value => @post.published_at, :default => Time.now, :ignore_date => true
 .clear.medium
 = f.label :body
 .clear

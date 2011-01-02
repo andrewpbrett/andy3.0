@@ -1,12 +1,19 @@
 #item_container
 	#newupdate_container
 		= form_for @update, :as => :update, :url => { :action => :create } do |f|
-			= check_box_tag :tweet, value = 1, checked = true
-			= f.label "Post to twitter?"
+			= f.check_box :public, :checked => true
+			= f.label :public
+			.clear.medium
+			= check_box_tag :_send_coords_to_twitter
+			= label nil, :send_coords_to_twitter			
 			.clear.medium
 			= f.text_area :body, :cols => 65, :rows => 10
 			.clear
 			#counter
 				140
 			.clear.medium
+			= f.hidden_field :geolat
+			= f.hidden_field :geolong
+			= f.select :twitterplace_id, options_for_select({ "none" => "", "The Wayne-Falkland" => "1d5b19b513a1c9df", "Twitter HQ" => "247f43d441defc03" }, "1d5b19b513a1c9df")
 			= f.submit
+%script{ :src => "/javascripts/location.js" }

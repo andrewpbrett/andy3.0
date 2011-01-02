@@ -10,7 +10,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20110102063700) do
+ActiveRecord::Schema.define(:version => 20110102211231) do
 
   create_table "images", :force => true do |t|
     t.string   "permalink"
@@ -21,6 +21,7 @@ ActiveRecord::Schema.define(:version => 20110102063700) do
     t.datetime "created_at"
     t.datetime "updated_at"
     t.boolean  "photos"
+    t.boolean  "public"
   end
 
   create_table "posts", :force => true do |t|
@@ -29,9 +30,9 @@ ActiveRecord::Schema.define(:version => 20110102063700) do
     t.string   "title"
     t.text     "body"
     t.text     "excerpt"
-    t.string   "status"
     t.string   "permalink"
     t.datetime "published_at"
+    t.boolean  "public"
   end
 
   create_table "updates", :force => true do |t|
@@ -39,6 +40,10 @@ ActiveRecord::Schema.define(:version => 20110102063700) do
     t.datetime "updated_at"
     t.datetime "published_at"
     t.text     "body"
+    t.boolean  "public"
+    t.decimal  "geolat",          :precision => 10, :scale => 3
+    t.decimal  "geolong",         :precision => 10, :scale => 3
+    t.string   "twitterplace_id"
   end
 
   create_table "users", :force => true do |t|

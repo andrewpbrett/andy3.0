@@ -1,7 +1,13 @@
 = form_for @image, :as => :image, :url => { :action => :create }, :html => {:multipart => true} do |f|
 	= f.check_box :photos
 	= f.label :photos
+	.clear.medium
+	= f.check_box :public
+	= f.label :public
+	.clear.medium
 	= f.label :permalink
 	= f.text_field :permalink
+	.clear.medium
 	= f.file_field :image
+	.clear.medium
 	= f.submit
