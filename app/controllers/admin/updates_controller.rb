@@ -11,9 +11,9 @@ class Admin::UpdatesController < ApplicationController
     if @update.save
       flash[:notice] = "Successfully saved"
       geolat = params["_send_coords_to_twitter"] == "1" ? 
-        @update.geolat.to_s("8F") : ""
+        @update.geolat.to_s : ""
       geolong = params["_send_coords_to_twitter"] == "1" ? 
-        @update.geolong.to_s("8F") : ""
+        @update.geolong.to_s : ""
       tweet(@update.body, geolat, geolong, @update.twitterplace_id) if 
         @update.public
     end
