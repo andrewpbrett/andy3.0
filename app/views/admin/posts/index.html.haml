@@ -8,8 +8,8 @@
 		.clear.medium
 		- @posts.each do |post|
 			%a{ :href => "/#{post.permalink}" }
-				= post.published_at.strftime("%b %d, %Y")
+				= post.published_at.strftime("%b %d, %Y") if post.published_at.present?
 				\-
-				= post.title
+				= post.title if post.title.present?
 			= link_to "[Edit]", edit_admin_post_path(post)
 			.clear.medium

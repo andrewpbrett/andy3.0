@@ -8,6 +8,8 @@ gem 'htmlentities'
 gem 'oauth'
 gem 'paperclip'
 gem 'authlogic'
+gem 'lockfile'
+gem 'system_timer'
 
 group :development do
 	gem 'ruby-debug'

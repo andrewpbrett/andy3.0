@@ -1,0 +1,11 @@
+conf = YAML.load_file("config/pwd.yml")
+email = conf["daily_email"]
+pwd = conf["daily_email_pwd"]
+ActionMailer::Base.smtp_settings = {
+  :address              => "smtp.gmail.com",
+  :port                 => 587,
+  :domain               => 'andybrett.com',
+  :user_name            => email,
+  :password             => pwd,
+  :authentication       => 'plain',
+  :enable_starttls_auto => true  }
