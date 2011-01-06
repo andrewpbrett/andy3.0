@@ -10,6 +10,7 @@ gem 'paperclip'
 gem 'authlogic'
 gem 'lockfile'
 gem 'system_timer'
+gem 'acts-as-taggable-on'
 
 group :development do
 	gem 'ruby-debug'

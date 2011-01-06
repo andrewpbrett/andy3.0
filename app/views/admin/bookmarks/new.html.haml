@@ -1,0 +1,18 @@
+= form_for @bookmark, :url => { :action => :create } do |f|
+	URL
+	.clear
+	= f.text_field :url
+	.clear.medium
+	Title
+	.clear
+	= f.text_field :title
+	.clear.medium
+	Note
+	.clear
+	= f.text_field :note
+	.clear.medium
+	Tag list
+	.clear
+	= f.text_field :tag_list
+	.clear.medium
+	= f.submit "Post"

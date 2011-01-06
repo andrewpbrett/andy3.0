@@ -148,3 +148,10 @@ h2#post_title {
     .image_container #image_nav #spacer {
       width: 20px;
       height: 1px; }
+
+.bookmark_title {
+  font-weight: bold; }
+
+a.linked {
+  color: #0b4e00;
+  font-weight: bold; }

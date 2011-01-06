@@ -7,8 +7,10 @@ Andy30::Application.routes.draw do
   # Keep in mind you can assign values other than :controller and :action
   match 'user_sessions/new' => redirect("/")
   resources :user_sessions  
-  resources :users  
+  resources :users
+  resources :bookmarks
   
+  match 'readings' => 'bookmarks#index', :as => [:public_bookmarks, :readings]
   match 'l' => 'user_sessions#new', :as => :login
   match 'logout' => 'user_sessions#destroy', :as => :logout
   match 'admin' => 'admin#index', :as => :admin
@@ -73,6 +75,7 @@ Andy30::Application.routes.draw do
     resources :posts
     resources :updates
     resources :images
+    resources :bookmarks
   end
 
   # You can have the root of your site routed with "root"

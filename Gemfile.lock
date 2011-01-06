@@ -28,6 +28,7 @@ GEM
       activemodel (= 3.0.3)
       activesupport (= 3.0.3)
     activesupport (3.0.3)
+    acts-as-taggable-on (2.0.6)
     arel (2.0.3)
     authlogic (2.1.6)
       activesupport
@@ -87,6 +88,7 @@ PLATFORMS
   ruby
 
 DEPENDENCIES
+  acts-as-taggable-on
   authlogic
   haml
   hpricot

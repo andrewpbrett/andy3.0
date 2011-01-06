@@ -10,7 +10,15 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20110102211231) do
+ActiveRecord::Schema.define(:version => 20110106174234) do
+
+  create_table "bookmarks", :force => true do |t|
+    t.string   "url"
+    t.string   "title"
+    t.string   "note"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
 
   create_table "images", :force => true do |t|
     t.string   "permalink"
@@ -20,8 +28,6 @@ ActiveRecord::Schema.define(:version => 20110102211231) do
     t.datetime "image_updated_at"
     t.datetime "created_at"
     t.datetime "updated_at"
-    t.boolean  "photos"
-    t.boolean  "public"
   end
 
   create_table "posts", :force => true do |t|
@@ -32,7 +38,23 @@ ActiveRecord::Schema.define(:version => 20110102211231) do
     t.text     "excerpt"
     t.string   "permalink"
     t.datetime "published_at"
-    t.boolean  "public"
+  end
+
+  create_table "taggings", :force => true do |t|
+    t.integer  "tag_id"
+    t.integer  "taggable_id"
+    t.string   "taggable_type"
+    t.integer  "tagger_id"
+    t.string   "tagger_type"
+    t.string   "context"
+    t.datetime "created_at"
+  end
+
+  add_index "taggings", ["tag_id"], :name => "index_taggings_on_tag_id"
+  add_index "taggings", ["taggable_id", "taggable_type", "context"], :name => "index_taggings_on_taggable_id_and_taggable_type_and_context"
+
+  create_table "tags", :force => true do |t|
+    t.string "name"
   end
 
   create_table "updates", :force => true do |t|
@@ -40,7 +62,6 @@ ActiveRecord::Schema.define(:version => 20110102211231) do
     t.datetime "updated_at"
     t.datetime "published_at"
     t.text     "body"
-    t.boolean  "public"
     t.decimal  "geolat",          :precision => 10, :scale => 3
     t.decimal  "geolong",         :precision => 10, :scale => 3
     t.string   "twitterplace_id"

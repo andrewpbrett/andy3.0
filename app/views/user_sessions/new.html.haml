@@ -9,3 +9,7 @@
 	= f.password_field :password
 	.clear.medium
 	= f.submit "Login"
+	:javascript
+		$(document).ready(function(){
+		  $("#user_session_login").focus();
+		});

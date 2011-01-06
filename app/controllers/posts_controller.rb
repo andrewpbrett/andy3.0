@@ -1,7 +1,7 @@
 class PostsController < ApplicationController
   def index
     @page_title = "Andy Brett | Writing"
-    @posts = Post.for_blog
+    @posts = Post.public_timeline
   end
   
   def show

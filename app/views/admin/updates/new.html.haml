@@ -1,8 +1,8 @@
 #item_container
 	#newupdate_container
 		= form_for @update, :as => :update, :url => { :action => :create } do |f|
-			= f.check_box :public, :checked => true
-			= f.label :public
+			Tag list
+			= f.text_field :tag_list
 			.clear.medium
 			= check_box_tag :_send_coords_to_twitter
 			= label nil, :send_coords_to_twitter			

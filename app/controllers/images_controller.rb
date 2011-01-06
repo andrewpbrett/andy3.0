@@ -12,7 +12,6 @@ class ImagesController < ApplicationController
   end
   
   def index
-    @images = Image.all(:conditions => { :photos => true, :public => true }, 
-      :order => "created_at DESC")
+    @images = Image.photostream
   end
 end

@@ -1,0 +1,13 @@
+#item_container
+	- @bookmarks.each do |b|
+		= b.created_at.strftime("%A, %b %d %Y")
+		.clear
+		= filter_bookmark_note(b.note)
+		.clear
+		%a{ :href => b.url, :class => "bookmark_title" }
+			= b.title
+		.clear.medium
+	You can also view 
+	%a{ :href => "http://www.google.com/reader/shared/andybrett", :class => "linked" }
+		my shared items on Google Reader
+	for items prior to Jan 2011.
