@@ -1,6 +1,4 @@
-class Admin::PostsController < ApplicationController
-  before_filter :authorize  
-  
+class Admin::PostsController < AdminController  
   def index
     @posts = Post.all(:order => "published_at DESC")
   end  

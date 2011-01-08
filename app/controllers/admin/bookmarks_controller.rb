@@ -1,6 +1,4 @@
-class Admin::BookmarksController < ApplicationController
-  before_filter :authorize  
-  
+class Admin::BookmarksController < AdminController
   def new
     @bookmark = Bookmark.new
   end

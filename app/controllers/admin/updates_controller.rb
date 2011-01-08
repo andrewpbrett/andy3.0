@@ -1,6 +1,4 @@
-class Admin::UpdatesController < ApplicationController
-  before_filter :authorize  
-
+class Admin::UpdatesController < AdminController
   def new
     @update = Update.new
   end

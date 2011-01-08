@@ -1,6 +1,4 @@
-class Admin::ImagesController < ApplicationController
-  before_filter :authorize
-
+class Admin::ImagesController < AdminController
   def index
     @images = Image.order("created_at DESC")
   end
