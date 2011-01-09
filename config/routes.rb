@@ -9,6 +9,7 @@ Andy30::Application.routes.draw do
   resources :user_sessions  
   resources :users
   resources :bookmarks
+  resources :updates
   
   match 'readings' => 'bookmarks#index', :as => [:public_bookmarks, :readings]
   match 'l' => 'user_sessions#new', :as => :login

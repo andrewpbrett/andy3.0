@@ -1,0 +1,6 @@
+#item_container
+	#updates_container
+		=raw linkify(@update.body)
+		\-
+		= @update.published_at.localtime.strftime("%b %d")
+		.clear.medium

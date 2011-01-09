@@ -3,5 +3,5 @@
 		- @updates.each do |update|
 			=raw linkify(update.body)
 			\-
-			= update.published_at.localtime.strftime("%b %d")
+			= link_to update.published_at.localtime.strftime("%b %d"), update_path(update)
 			.clear.medium

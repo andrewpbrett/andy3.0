@@ -5,7 +5,9 @@ class IncomingMailHandler < ActionMailer::Base
     full_body = email.parts[1].body.decoded
     body = full_body[0, full_body.index("<div class=\"gmail_quote\"")]
     
-    Post.create(:permalink => "my-life-#{date.to_s}", :body => body,
+    p = Post.create(:permalink => "my-life-#{date.to_s}", :body => body,
                 :title => "Daily note for #{date.to_s}", :published_at => Time.now)
+    p.tag_list << "daily-email"
+    p.save
   end 
 end
