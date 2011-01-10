@@ -1,0 +1,7 @@
+= b.created_at.strftime("%A, %b %d %Y")
+.clear
+= filter_bookmark_note(b.note)
+.clear
+%a{ :href => b.url, :class => "bookmark_title" }
+	= b.title
+.clear.medium

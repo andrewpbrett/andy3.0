@@ -11,6 +11,7 @@ gem 'authlogic'
 gem 'lockfile'
 gem 'system_timer'
 gem 'acts-as-taggable-on'
+gem 'json' 
 
 group :development do
 	gem 'ruby-debug'

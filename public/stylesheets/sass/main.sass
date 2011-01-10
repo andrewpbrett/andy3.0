@@ -67,8 +67,14 @@ h1#summary
 		li.selected
 			border-bottom: 2px solid $dagny
 
-#item_container
+#main_container
 	padding: 10px 20px
+	a
+		color: $post-link
+		font-weight: bold
+		
+#item_container
+
 	
 #post_container
 	min-height: 500px
@@ -82,6 +88,9 @@ h1#summary
 #posts_container
 	padding: 10px 0px
 	margin: 0px
+	a
+		color: inherit
+		font-weight: normal
 	
 #updates_container
 	padding: 20px 0px
@@ -162,7 +171,18 @@ h2#post_title
 			
 .bookmark_title
 	font-weight: bold
+
+.item_text
+	float: left
+	width: 600px
 	
-a.linked
-	color: $post-link
-	font-weight: bold
+.item_title
+	float: left
+	padding: 0 10px
+		
+.item_timestamp
+	float: left
+	padding: 0 10px
+	
+.item_source_image
+	float: left

@@ -38,6 +38,7 @@
 				.clear
 				#flashnotice_container
 					= flash[:notice]
-				= yield
+				#main_container
+					= yield
 			#footer
 		= render :partial => "application/analytics"

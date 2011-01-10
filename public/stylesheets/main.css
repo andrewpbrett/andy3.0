@@ -62,8 +62,11 @@ h1#summary {
     #nav ul li.selected {
       border-bottom: 2px solid #333f62; }
 
-#item_container {
+#main_container {
   padding: 10px 20px; }
+  #main_container a {
+    color: #0b4e00;
+    font-weight: bold; }
 
 #post_container, #notfound_container, #newpost_container, #flashnotice_container {
   min-height: 500px;
@@ -77,6 +80,9 @@ h1#summary {
 #posts_container {
   padding: 10px 0px;
   margin: 0px; }
+  #posts_container a {
+    color: inherit;
+    font-weight: normal; }
 
 #updates_container {
   padding: 20px 0px;
@@ -152,6 +158,17 @@ h2#post_title {
 .bookmark_title {
   font-weight: bold; }
 
-a.linked {
-  color: #0b4e00;
-  font-weight: bold; }
+.item_text {
+  float: left;
+  width: 600px; }
+
+.item_title {
+  float: left;
+  padding: 0 10px; }
+
+.item_timestamp {
+  float: left;
+  padding: 0 10px; }
+
+.item_source_image {
+  float: left; }

@@ -10,7 +10,9 @@ Andy30::Application.routes.draw do
   resources :users
   resources :bookmarks
   resources :updates
+  resources :items
   
+  match 'reader' => 'items#index'
   match 'readings' => 'bookmarks#index', :as => [:public_bookmarks, :readings]
   match 'l' => 'user_sessions#new', :as => :login
   match 'logout' => 'user_sessions#destroy', :as => :logout
@@ -77,6 +79,7 @@ Andy30::Application.routes.draw do
     resources :updates
     resources :images
     resources :bookmarks
+    resources :subscriptions
   end
 
   # You can have the root of your site routed with "root"

@@ -1,0 +1,6 @@
+#main_container
+	- @subscriptions.each do |s|
+		= link_to s.name, edit_admin_subscription_path(s)
+		\-
+		= link_to "Edit", edit_admin_subscription_path(s)
+		.clear

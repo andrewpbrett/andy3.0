@@ -10,7 +10,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20110106174234) do
+ActiveRecord::Schema.define(:version => 20110110070111) do
 
   create_table "bookmarks", :force => true do |t|
     t.string   "url"
@@ -30,6 +30,19 @@ ActiveRecord::Schema.define(:version => 20110106174234) do
     t.datetime "updated_at"
   end
 
+  create_table "items", :force => true do |t|
+    t.integer  "subscription_id"
+    t.string   "external_id"
+    t.string   "title"
+    t.text     "text"
+    t.text     "url"
+    t.string   "author"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+    t.datetime "published_at"
+    t.text     "source_image_url"
+  end
+
   create_table "posts", :force => true do |t|
     t.datetime "created_at"
     t.datetime "updated_at"
@@ -38,6 +51,13 @@ ActiveRecord::Schema.define(:version => 20110106174234) do
     t.text     "excerpt"
     t.string   "permalink"
     t.datetime "published_at"
+  end
+
+  create_table "subscriptions", :force => true do |t|
+    t.string   "name"
+    t.text     "url"
+    t.datetime "created_at"
+    t.datetime "updated_at"
   end
 
   create_table "taggings", :force => true do |t|
