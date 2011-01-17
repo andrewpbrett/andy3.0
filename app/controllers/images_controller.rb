@@ -13,5 +13,6 @@ class ImagesController < ApplicationController
   
   def index
     @images = Image.photostream
+    @page_title = "Andy Brett | Photos"
   end
 end

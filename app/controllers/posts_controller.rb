@@ -11,7 +11,8 @@ class PostsController < ApplicationController
       @page_title = "Andy Brett"
     else
       @post.title ||= ""
-      @page_title = "Andy Brett | " + @post.title
+      @page_title = "Andy Brett" 
+      @page_title += @post.title if @post.title.present?
     end
   end
 end
