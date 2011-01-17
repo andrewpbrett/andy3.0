@@ -1,11 +1,3 @@
 #item_container
 	#post_container
-		- unless @post.title.blank?
-			%h2#post_title
-				%a{ :href => "/#{@post.permalink}" }= @post.title
-			.clear
-			#post_date
-				%a{ :href => "/#{@post.permalink}" }= @post.published_at.strftime("%b %d, %Y")
-			.clear
-		#post_body
-			=raw @post.body
+		= render :partial => "show", :locals => { :post => @post }

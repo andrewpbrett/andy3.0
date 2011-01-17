@@ -1,7 +1,7 @@
-= b.created_at.strftime("%A, %b %d %Y")
-.clear
-= filter_bookmark_note(b.note)
+=raw filter_bookmark_note(b.note) if b.note.present?
 .clear
 %a{ :href => b.url, :class => "bookmark_title" }
 	= b.title
-.clear.medium
+.clear
+.permalink
+	= link_to b.created_at.strftime("%b %d"), bookmark_path(b.id)

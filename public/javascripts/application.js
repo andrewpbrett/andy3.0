@@ -3,7 +3,7 @@ $(document).ready(function(){
 	if(path.indexOf('/') != -1){
 		path = path.substring(0, path.indexOf('/'));
 	}
-	if(path == "" || $("#" + path).html() == null){
+	if($("#" + path).html() == null){
 		$("#writing").addClass('selected');
 	}
 	else{

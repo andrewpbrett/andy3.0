@@ -3,7 +3,7 @@
 		= image_tag item.source_image_url, :class => "item_source_image" if item.source_image_url.present?
 		.item_text
 			.item_title
-				= raw linkify item.title
+				= raw linkify item.title if item.title
 			.clear
 			.item_timestamp
 				= link_to "#{time_ago_in_words(item.published_at)} ago", item.url

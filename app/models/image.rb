@@ -7,16 +7,20 @@ class Image < ActiveRecord::Base
   
   def self.photostream
     Image.order("created_at DESC").reject do |i|
-      !i.public || !i.photos
+      !i.public || !i.photos || i.published_at < Date.today - 100.days
     end
   end
   
+  def published_at
+    created_at
+  end
+  
   def older_photo
-    Image.order("created_at DESC").limit(1).where("photos = true and created_at < ?", created_at).first
+    Image.order("created_at DESC").where("created_at < ?", created_at).reject { |i| !i.photos }.first
   end
   
   def newer_photo
-    Image.order("created_at ASC").limit(1).where("photos = true and created_at > ?", created_at).first
+    Image.order("created_at ASC").where("created_at > ?", created_at).reject { |i| !i.photos }.first
   end
   
   def public

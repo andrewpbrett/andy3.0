@@ -1,6 +1,7 @@
 #item_container
 	- @bookmarks.each do |b|
 		= render :partial => "show", :locals => { :b => b }
+		.clear.medium
 	You can also view 
 	%a{ :href => "http://www.google.com/reader/shared/andybrett" }
 		my shared items on Google Reader

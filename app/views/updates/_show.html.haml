@@ -1,0 +1,3 @@
+=raw linkify(update.body)
+.permalink
+	= link_to update.published_at.localtime.strftime("%b %d"), update_path(update)

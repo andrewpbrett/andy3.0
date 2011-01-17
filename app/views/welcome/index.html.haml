@@ -1,0 +1,5 @@
+#welcome_container
+	- @all_items.each do |i|
+		- c = "welcome_item welcome_#{i.class.to_s.downcase}"
+		%div{ :class => c }
+			= display_in_timeline i

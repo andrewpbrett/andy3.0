@@ -3,7 +3,7 @@
 		%img{ :src => "#{@image.image.url(:medium)}" }
 	- else
 		%a{ :href => images_url(@older_image.permalink) }	
-			%img{ :src => "#{@image.image.url(:medium)}" }		
+			%img{ :src => "#{@image.image.url(:medium)}" }
 	#image_nav
 		#newer
 			= link_to "< Newer", images_url(@newer_image.permalink) unless @newer_image.blank?	
