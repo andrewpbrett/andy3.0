@@ -22,3 +22,11 @@ $(document).ready(function(){
 		}	
 	}
 });
+function shorten(url) {
+var req = $.ajax({ url: "/short.json",
+				 					 data: "url=" + url,
+									 success: function(data) {
+										$("#update_body").val(data["id"]);
+									 }
+					});
+}

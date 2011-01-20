@@ -13,6 +13,23 @@
 	.clear.medium
 	Tag list
 	.clear
-	= f.text_field :tag_list
+	= f.text_field :tag_list, :value => "\"public\""
+	.clear.medium
+	Tweet text:
+	.clear
+	= text_area :update_body, nil, :name => "update_body", :id => "update_body", :cols => 65, :rows => 10
+	.clear
+	#counter
+		140	
 	.clear.medium
 	= f.submit "Post"
+:javascript
+	$("#bookmark_url").blur(function(){shorten($("#bookmark_url").val());});
+	$("#bookmark_title").blur(function(){
+			$("#update_body").val($("#bookmark_title").val() + " -- " + 
+														$("#update_body").val());
+		});
+	$("#bookmark_note").blur(function(){
+			$("#update_body").val($("#bookmark_note").val() + " -- " + 
+														$("#update_body").val());
+		});		

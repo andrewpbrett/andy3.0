@@ -4,7 +4,23 @@ class ApplicationController < ActionController::Base
   def index
     @page_title = "Andy Brett"
   end
-  
+
+  def shorten_url
+    return unless current_user == User.andy
+    url = params[:url]
+    http = Net::HTTP.new('www.googleapis.com', 443)
+    http.use_ssl = true
+    
+    path = "/urlshortener/v1/url"
+    data = "{\"longUrl\" : \"#{url}\", \"key\" : \"AIzaSyApp-49fvHtnEHcH_1dIdmC57PfvpObvMw\" }"
+    headers = {"Content-Type"=>"application/json"}
+    
+    response, return_data = http.post(path, data, headers)
+    respond_to do |format|
+      format.json { render :json => return_data }
+    end
+  end
+    
   private
   
   def tweet(text, geolat, geolong, place_id)
