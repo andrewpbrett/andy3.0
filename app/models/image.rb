@@ -6,13 +6,9 @@ class Image < ActiveRecord::Base
   acts_as_taggable_on :tags
   
   def self.photostream
-    Image.order("created_at DESC").reject do |i|
-      !i.public || !i.photos || i.published_at < Date.today - 100.days
+    Image.order("published_at DESC").reject do |i|
+      !i.public || !i.photos
     end
-  end
-  
-  def published_at
-    created_at
   end
   
   def older_photo

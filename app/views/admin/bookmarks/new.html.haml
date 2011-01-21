@@ -26,10 +26,10 @@
 :javascript
 	$("#bookmark_url").blur(function(){shorten($("#bookmark_url").val());});
 	$("#bookmark_title").blur(function(){
-			$("#update_body").val($("#bookmark_title").val() + " -- " + 
+			$("#update_body").val($("#bookmark_title").val() + " : " + 
 														$("#update_body").val());
 		});
 	$("#bookmark_note").blur(function(){
-			$("#update_body").val($("#bookmark_note").val() + " -- " + 
+			$("#update_body").val($("#bookmark_note").val() + " : " + 
 														$("#update_body").val());
 		});		
