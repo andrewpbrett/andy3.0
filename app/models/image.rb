@@ -12,11 +12,11 @@ class Image < ActiveRecord::Base
   end
   
   def older_photo
-    Image.order("created_at DESC").where("created_at < ?", created_at).reject { |i| !i.photos }.first
+    Image.order("published_at DESC").where("published_at < ?", published_at).reject { |i| !i.photos }.first
   end
   
   def newer_photo
-    Image.order("created_at ASC").where("created_at > ?", created_at).reject { |i| !i.photos }.first
+    Image.order("published_at ASC").where("published_at > ?", published_at).reject { |i| !i.photos }.first
   end
   
   def public
