@@ -26,7 +26,7 @@ function shorten(url) {
 var req = $.ajax({ url: "/short.json",
 				 					 data: "url=" + url,
 									 success: function(data) {
-										$("#update_body").val(data["id"]);
+										$("#update_body").val($("#update_body").val() + data["id"]);
 									 }
 					});
 }

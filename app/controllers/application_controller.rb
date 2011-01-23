@@ -1,6 +1,7 @@
 class ApplicationController < ActionController::Base
   protect_from_forgery
-  
+  before_filter :store_location
+    
   def index
     @page_title = "Andy Brett"
   end
@@ -22,6 +23,15 @@ class ApplicationController < ActionController::Base
   end
     
   private
+  
+  def store_location
+    session[:return_to] = request.fullpath
+  end
+  
+  def redirect_back_or_default(default)
+    redirect_to(session[:return_to] || default)
+    session[:return_to] = nil
+  end
   
   def tweet(text, geolat, geolong, place_id)
     pwd = YAML.load_file("config/pwd.yml")
@@ -51,7 +61,10 @@ class ApplicationController < ActionController::Base
   end  
 
   def authorize
-    redirect_to root_url unless current_user == User.andy
+    unless current_user == User.andy
+      flash[:notice] = "You must be logged in to access this page"
+      redirect_to login_url
+    end      
   end  
   
   def require_user

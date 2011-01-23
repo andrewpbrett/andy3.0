@@ -24,6 +24,9 @@
 	.clear.medium
 	= f.submit "Post"
 :javascript
+	shorten($("#bookmark_url").val());
+	$("#update_body").val($("#bookmark_title").val() + " : " + 
+												$("#update_body").val());	
 	$("#bookmark_url").blur(function(){shorten($("#bookmark_url").val());});
 	$("#bookmark_title").blur(function(){
 			$("#update_body").val($("#bookmark_title").val() + " : " + 

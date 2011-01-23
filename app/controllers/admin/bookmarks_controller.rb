@@ -4,7 +4,7 @@ class Admin::BookmarksController < AdminController
   end
   
   def new
-    @bookmark = Bookmark.new
+    @bookmark = Bookmark.new(:title => params[:title], :url => params[:url])
   end
   
   def create
