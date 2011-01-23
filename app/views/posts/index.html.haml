@@ -1,4 +1,7 @@
 #item_container
+	All
+	= @posts.size
+	posts:
 	#posts_container
 		- year = nil
 		- @posts.each do |post|
@@ -14,3 +17,5 @@
 			.clear.medium
 		.posts_subheader
 			= link_to "RSS", writing_path(:format => :rss)
+:javascript
+	$("#writing").addClass('selected');

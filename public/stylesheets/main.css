@@ -120,7 +120,7 @@ h2#post_title {
   font-size: 20px; }
 
 #post_date {
-  margin: 10px 0px; }
+  margin: 0px; }
 
 #post_header #post_date {
   float: right; }

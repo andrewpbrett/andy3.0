@@ -3,8 +3,10 @@
 	%h2#post_title
 		%a{ :href => "/#{post.permalink}" }= post.title
 	.clear
-	#post_date
-		%a{ :href => "/#{post.permalink}" }= post.published_at.strftime("%b %d, %Y")
+	#post_date.permalink
+		%a{ :href => "/#{post.permalink}" }= post.published_at.strftime("%b %d")
 	.clear
 #post_body
 	=raw show_excerpt ? post.smart_excerpt : post.body
+	- if show_excerpt
+		= link_to "Continued...", post.permalink
