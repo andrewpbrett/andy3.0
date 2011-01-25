@@ -156,13 +156,14 @@ h2#post_title {
   .image_container img {
     width: 700px; }
   .image_container #image_nav {
-    width: 160px;
+    width: 275px;
     margin: 0 auto; }
     .image_container #image_nav div {
       float: left; }
-    .image_container #image_nav #spacer {
-      width: 20px;
-      height: 1px; }
+
+.spacer {
+  width: 20px;
+  height: 1px; }
 
 .bookmark_title {
   font-weight: bold; }
@@ -205,3 +206,6 @@ h2#post_title {
 
 .image_thumbnail_wrapper {
   margin: auto; }
+
+.image_date {
+  float: right; }
