@@ -1,9 +1,16 @@
 - @images.each_with_index do |image, i|
 	.image_thumbnail_container
-		%a{ :href => images_url(image.permalink) }	
-			%img{ :src => "#{image.image.url(:small)}" }
+		.image_thumbnail_wrapper
+			%a{ :href => images_url(image.permalink) }	
+				%img{ :src => "#{image.image.url(:small)}" }
 	- if i % 4 == 3
 		.clear
 .clear
 :javascript
-	$("#photos").addClass('selected');
+	$(window).load(function(){
+		$("#photos").addClass('selected');
+		var wrappers = $(".image_thumbnail_wrapper");
+		for (var i = 0; i < wrappers.length - 1; i++) {
+			$(wrappers[i]).css("width", $(wrappers[i].children[0].children[0]).css("width"));
+		}
+	});

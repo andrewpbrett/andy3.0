@@ -4,6 +4,12 @@ class Image < ActiveRecord::Base
   validates_uniqueness_of :permalink
 
   acts_as_taggable_on :tags
+
+  def self.recent_photostream
+    Image.where("published_at > '#{Date.today - 100.days}'").order("published_at DESC").reject do |i|
+      !i.public || !i.photos
+    end
+  end
   
   def self.photostream
     Image.order("published_at DESC").reject do |i|
