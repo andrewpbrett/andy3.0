@@ -12,5 +12,10 @@
 		var wrappers = $(".image_thumbnail_wrapper");
 		for (var i = 0; i < wrappers.length - 1; i++) {
 			$(wrappers[i]).css("width", $(wrappers[i].children[0].children[0]).css("width"));
+			var s = $(wrappers[i]).css("height");
+			var height = s.substring(0, s.length - 2) - 0;
+			var margin = (150 - height)/2;
+			var mtop = margin + "px"
+			$(wrappers[i]).css("margin-top", mtop);
 		}
 	});

@@ -145,6 +145,7 @@ h2#post_title {
 .image_thumbnail_container {
   margin: 14px;
   width: 150px;
+  height: 150px;
   float: left; }
   .image_thumbnail_container img {
     border: 1px solid #333f62;
