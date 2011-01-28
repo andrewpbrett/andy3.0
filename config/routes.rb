@@ -18,7 +18,7 @@ Andy30::Application.routes.draw do
   match 'l' => 'user_sessions#new', :as => :login
   match 'logout' => 'user_sessions#destroy', :as => :logout
   match 'admin' => 'admin#index', :as => :admin
-  match 'citingthetext' => 'posts#index'
+  match 'citingthetext' => redirect("/writing")
   match 'posts.atom' => redirect("/posts.rss")
   match 'posts' => 'posts#index'
   match 'photos' => 'images#index'
