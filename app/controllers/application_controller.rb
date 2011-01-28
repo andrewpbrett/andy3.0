@@ -25,7 +25,8 @@ class ApplicationController < ActionController::Base
   private
   
   def store_location
-    session[:return_to] = request.fullpath
+    session[:return_to] = nil
+    session[:return_to] = request.fullpath unless request.fullpath == "/"
   end
   
   def redirect_back_or_default(default)

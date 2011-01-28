@@ -15,18 +15,17 @@
 	.clear
 	= f.text_field :tag_list, :value => "\"public\""
 	.clear.medium
-	Tweet text:
-	.clear
-	= text_area :update_body, nil, :name => "update_body", :id => "update_body", :cols => 65, :rows => 10
-	.clear
-	#counter
-		140	
+	= render :partial => "tweet/tweet_field"
 	.clear.medium
 	= f.submit "Post"
 :javascript
-	shorten($("#bookmark_url").val());
-	$("#update_body").val($("#bookmark_title").val() + " : " + 
-												$("#update_body").val());	
+	if($("#bookmark_url").val() != ""){
+		shorten($("#bookmark_url").val());
+	}
+	if($("#bookmark_title").val() != ""){
+		$("#update_body").val($("#bookmark_title").val() + " : " + 
+													$("#update_body").val());	
+	}
 	$("#bookmark_url").blur(function(){shorten($("#bookmark_url").val());});
 	$("#bookmark_title").blur(function(){
 			$("#update_body").val($("#bookmark_title").val() + " : " + 
