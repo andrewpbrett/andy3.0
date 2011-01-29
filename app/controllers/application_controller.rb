@@ -17,8 +17,21 @@ class ApplicationController < ActionController::Base
     headers = {"Content-Type"=>"application/json"}
     
     response, return_data = http.post(path, data, headers)
+
     respond_to do |format|
       format.json { render :json => return_data }
+    end
+  end
+  
+  def get_twitter_places
+    return unless current_user == User.andy
+    lat = params[:lat]
+    long = params[:long]
+    granularity = params[:granularity].present? ? params[:granularity] : "poi"
+    ret = JSON.parse(Net::HTTP.get_response(URI.parse("http://api.twitter.com/1/geo/search.json?lat=#{lat}&long=#{long}&granularity=#{granularity}&max_results=20")).body)
+
+    respond_to do |format|
+      format.json { render :json => ret }
     end
   end
     
