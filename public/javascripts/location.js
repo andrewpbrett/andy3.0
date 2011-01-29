@@ -34,10 +34,6 @@ function add_twitter_places() {
 var req = $.ajax({ url: "/tgeo.json",
 				 					 data: "lat=" + geolat + "&long=" + geolong,
 									 success: function(data) {
-									 		// alert(data["result"]["places"][0]["name"]);
-									 		// alert(data["result"]["places"][1]["name"]);
-									 		// alert(data["result"]["places"][2]["name"]);
-									 		// alert(data["result"]["places"].length);
 											$('#update_twitterplace_id').append($("<option></option").attr("value","").text("----------"));
 											$.each(data["result"]["places"], function(key, value)
 											{   
@@ -45,8 +41,7 @@ var req = $.ajax({ url: "/tgeo.json",
 											          append($("<option></option>").
 											          attr("value",value["id"]).
 											          text(value["name"])); 
-											});									
-										// $("#update_body").val($("#update_body").val() + data["id"]);
+											});
 									 }
 					});
 }
