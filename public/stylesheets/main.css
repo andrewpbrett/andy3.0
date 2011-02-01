@@ -152,10 +152,10 @@ h2#post_title {
     padding: 2px; }
 
 .image_container {
-  padding: 23px 9px; }
-  .image_container img {
-    width: 700px; }
+  padding: 23px 9px;
+  text-align: center; }
   .image_container #image_nav {
+    text-align: center;
     width: 275px;
     margin: 0 auto; }
     .image_container #image_nav div {
