@@ -1,1 +1,3 @@
-%img{ :src => "#{image.image.url(:post)}" }
+.image_wrapper	
+	%a{ :href => images_url(image.permalink) }	
+		%img{ :src => "#{image.image.url(:post)}" }

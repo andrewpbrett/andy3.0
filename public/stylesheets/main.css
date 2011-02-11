@@ -194,10 +194,14 @@ h2#post_title {
   font-size: 18px; }
 
 .welcome_image {
-  padding: 20px 10px; }
+  padding: 20px 10px;
+  width: 530px; }
 
 .welcome_bookmark {
   font-size: 18px; }
+
+.image_wrapper {
+  margin: auto; }
 
 .permalink a {
   color: gray !important;
