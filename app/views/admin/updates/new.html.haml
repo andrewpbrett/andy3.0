@@ -2,7 +2,7 @@
 	#newupdate_container
 		= form_for @update, :as => :update, :url => { :action => :create } do |f|
 			Tag list
-			= f.text_field :tag_list
+			= f.text_field :tag_list, :value => "\"public\""
 			.clear.medium
 			= check_box_tag :_send_coords_to_twitter
 			= label nil, :send_coords_to_twitter			
@@ -14,6 +14,11 @@
 			.clear.medium
 			= f.hidden_field :geolat
 			= f.hidden_field :geolong
+			Your coordinates, sir:
+			#visible_lat
+			.clear
+			#visible_long
+			.clear.medium
 			= f.select :twitterplace_id, options_for_select({ "none" => "", "The Wayne-Falkland" => "1d5b19b513a1c9df", "Twitter HQ" => "247f43d441defc03", "Mountain View" => "b19a2cc5134b7e0a", "San Francisco" => "5a110d312052166f", "Epicenter Cafe" => "a851ec943d3a27c5" }, "1d5b19b513a1c9df")
 			= f.submit
 %script{ :src => "/javascripts/location.js" }
