@@ -4,7 +4,8 @@
 		%a{ :href => "/#{post.permalink}" }= post.title
 	.clear
 	#post_date.permalink
-		%a{ :href => "/#{post.permalink}" }= post.published_at.strftime("%b %d")
+		- time_format = post.published_at.year == Date.today.year ? "%b %d" : "%b %d, %Y"
+		%a{ :href => "/#{post.permalink}" }= post.published_at.strftime(time_format)
 	.clear
 #post_body
 	=raw show_excerpt ? post.smart_excerpt : post.body
