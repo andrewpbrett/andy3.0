@@ -28,7 +28,7 @@ class ApplicationController < ActionController::Base
     lat = params[:lat]
     long = params[:long]
     granularity = params[:granularity].present? ? params[:granularity] : "poi"
-    ret = JSON.parse(Net::HTTP.get_response(URI.parse("http://api.twitter.com/1/geo/search.json?lat=#{lat}&long=#{long}&granularity=#{granularity}&max_results=20")).body)
+    ret = JSON.parse(Net::HTTP.get_response(URI.parse("http://api.twitter.com/1/geo/search.json?lat=#{lat}&long=#{long}&granularity=#{granularity}&max_results=40")).body)
 
     respond_to do |format|
       format.json { render :json => ret }
