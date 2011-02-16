@@ -1,3 +1,7 @@
+- show_caption ||= false
 .image_wrapper	
 	%a{ :href => images_url(image.permalink) }	
 		%img{ :src => "#{image.image.url(:post)}" }
+- if show_caption
+	.image_caption
+		=raw image.caption

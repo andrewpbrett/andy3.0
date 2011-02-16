@@ -168,6 +168,9 @@ h2#post_title {
     .image_container #image_nav div {
       float: left; }
 
+.image_caption {
+  text-align: center; }
+
 .spacer {
   width: 20px;
   height: 1px; }
