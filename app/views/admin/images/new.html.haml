@@ -15,8 +15,15 @@
 	Published date:
 	= f.date_select :published_at
 	.clear.medium
+	Caption
+	= f.text_field :caption
+	.clear.medium
 	= render :partial => "tweet/tweet_field"
 	.clear.medium	
 	= f.submit
 :javascript
+	$("#image_caption").blur(function(){
+			$("#update_body").val($("#image_caption").val() + " : " + 
+														$("#update_body").val());
+	});
 	$("#image_permalink").blur(function(){shorten("http://andybrett.com/photos/" + $("#image_permalink").val());});
