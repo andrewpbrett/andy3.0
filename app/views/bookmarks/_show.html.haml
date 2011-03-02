@@ -1,4 +1,4 @@
-=raw filter_bookmark_note(b.note) if b.note.present?
+=raw b.note
 .clear
 %a{ :href => b.url, :class => "bookmark_title" }
 	= b.title
