@@ -2,7 +2,7 @@ class IncomingMailHandler < ActionMailer::Base
   def receive(email) 
     date = Date.parse(email.subject[email.subject.index(',') + 1..email.subject.index('.') - 1])
 
-    full_body = email.parts[1].body.decoded
+    full_body = email.parts[0].body.decoded
     logger.error "parts[0] was #{email.parts[0]}"
     logger.error "parts[1] was #{email.parts[1]}"    
     logger.error "full body was #{full_body}"    
