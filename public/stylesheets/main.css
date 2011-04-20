@@ -75,6 +75,9 @@ h1#summary {
     color: #0b4e00;
     font-weight: bold; }
 
+#item_container {
+  line-height: 22px; }
+
 #post_container, #notfound_container, #newpost_container, #flashnotice_container {
   min-height: 500px;
   width: 550px;
