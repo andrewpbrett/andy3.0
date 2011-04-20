@@ -198,7 +198,8 @@ h2#post_title {
 
 .welcome_item {
   border-bottom: 1px solid #c3c3c3;
-  padding: 20px; }
+  padding: 20px;
+  line-height: 26px; }
 
 .welcome_update {
   font-size: 18px; }
