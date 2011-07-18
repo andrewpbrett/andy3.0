@@ -1,0 +1,61 @@
+:plain
+	<script src="//ajax.googleapis.com/ajax/libs/jquery/1.6.1/jquery.min.js" type="text/javascript"></script>
+Tweet text:
+.clear
+	%br
+= text_field_tag :text, "I like cake", :id => :text, :size => 100
+.clear
+	%br
+Post url (optional but recommended):
+.clear
+	%br
+= text_field_tag :url, "http://cakehealth.com", :id => :url, :size => 100
+.clear
+	%br
+= submit_tag "Go!", :id => :go
+.clear
+	%br
+%span{ :id => "click" } 
+	Copy 
+the following text:
+.clear
+	%br
+= text_area_tag :result, nil, :id => :result, :rows => 4, :cols => 60
+
+:javascript
+	UTF8 = {
+	    encode: function(s){
+	        for(var c, i = -1, l = (s = s.split("")).length, o = String.fromCharCode; ++i < l;
+	            s[i] = (c = s[i].charCodeAt(0)) >= 127 ? o(0xc0 | (c >>> 6)) + o(0x80 | (c & 0x3f)) : s[i]
+	        );
+	        return s.join("");
+	    },
+	    decode: function(s){
+	        for(var a, b, i = -1, l = (s = s.split("")).length, o = String.fromCharCode, c = "charCodeAt"; ++i < l;
+	            ((a = s[i][c](0)) & 0x80) &&
+	            (s[i] = (a & 0xfc) == 0xc0 && ((b = s[i + 1][c](0)) & 0xc0) == 0x80 ?
+	            o(((a & 0x03) << 6) + (b & 0x3f)) : o(128), s[++i] = "")
+	        );
+	        return s.join("");
+	    }
+	};
+	function combine(text, encoded, url) {
+		$.get("/short.json?url=" + url, function(data) { 
+			var shortUrl = data["id"];
+			var output = "<a href='https://twitter.com/intent/tweet?via=cakehealth&text=";
+			output += encoded;
+			output += "&url=";
+			output += escape(shortUrl);
+			output += "' target='_blank'>";
+			output += text;
+			output += "</a>";
+			$("#result").val(output);
+		});
+	}
+	
+	$("#go").click(function(){ 
+		var text = $("#text").val();
+		var encoded = escape(UTF8.encode(text));
+		var url = $("#url").val();
+		combine(text, encoded, url);
+	});
