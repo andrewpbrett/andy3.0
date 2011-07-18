@@ -13,6 +13,7 @@ Andy30::Application.routes.draw do
   resources :items
   
   match 'short' => 'application#shorten_url'
+  match 'tweetables' => 'application#tweetables'
   match 'tgeo' => 'application#get_twitter_places'
   match 'reader' => 'items#index'
   match 'readings' => 'bookmarks#index', :as => [:public_bookmarks, :readings]

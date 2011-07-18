@@ -5,9 +5,12 @@ class ApplicationController < ActionController::Base
   def index
     @page_title = "Andy Brett"
   end
+  
+  def tweetables
+    render :layout => false
+  end
 
   def shorten_url
-    return unless current_user == User.andy
     url = params[:url]
     http = Net::HTTP.new('www.googleapis.com', 443)
     http.use_ssl = true
