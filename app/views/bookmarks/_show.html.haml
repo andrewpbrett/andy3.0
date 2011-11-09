@@ -1,7 +1,7 @@
-=raw b.note
-.clear
 %a{ :href => b.url, :class => "bookmark_title" }
 	= b.title
+.clear
+=raw b.note
 .clear
 .permalink
 	= link_to b.created_at.strftime("%b %d"), bookmark_path(b.id)
