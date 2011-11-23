@@ -1,13 +1,13 @@
 - show_excerpt ||= false
 - unless post.title.blank?
 	%h2#post_title
-		%a{ :href => "/#{post.permalink}" }= post.title
+		%a{ :href => "/#{post.permalink}" }=raw RubyPants.new(post.title).to_html
 	.clear
 	#post_date.permalink
 		- time_format = post.published_at.year == Date.today.year ? "%b %d" : "%b %d, %Y"
 		%a{ :href => "/#{post.permalink}" }= post.published_at.strftime(time_format)
 	.clear
 #post_body
-	=raw show_excerpt ? post.smart_excerpt : post.body
+	=raw show_excerpt ? RubyPants.new(post.smart_excerpt).to_html : RubyPants.new(post.body).to_html
 	- if show_excerpt
 		= link_to "Continued...", post.permalink

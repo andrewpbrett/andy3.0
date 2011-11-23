@@ -12,6 +12,7 @@ gem 'lockfile'
 gem 'system_timer'
 gem 'acts-as-taggable-on'
 gem 'json' 
+gem 'rubypants'
 
 group :development do
 	gem 'ruby-debug'

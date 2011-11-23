@@ -4,4 +4,4 @@
 		%img{ :src => "#{image.image.url(:post)}" }
 - if show_caption
 	.image_caption
-		=raw image.caption
+		=raw RubyPants.new(image.caption).to_html

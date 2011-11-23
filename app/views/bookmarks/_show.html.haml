@@ -1,7 +1,7 @@
 %a{ :href => b.url, :class => "bookmark_title" }
-	= b.title
+	=raw RubyPants.new(b.title).to_html
 .clear
-=raw b.note
+=raw RubyPants.new(b.note).to_html
 .clear
 .permalink
 	= link_to b.created_at.strftime("%b %d"), bookmark_path(b.id)
