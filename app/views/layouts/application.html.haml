@@ -7,15 +7,15 @@
 		%meta{ :name => "google-site-verification", :content => "dPYG0gqQlcAXqTFAg8nZpvV-7wx51ZRc5D096cVHw7c" }
 		%meta{ :name => "verify-v1", :content => "GACJqKSgAOuYP5m5PFvn0joQ93sv9TkbfyKQUM4quXk=" }
 		%meta{ :content => "Home page for Andy Brett, a writer, engineer, and athlete living in Silicon Valley.", :name => "description" }
-		= stylesheet_link_tag :all
-		= javascript_include_tag "http://ajax.googleapis.com/ajax/libs/jquery/1.4.1/jquery.min.js", 'rails', 'application'
+		= stylesheet_link_tag 'application'
+		= javascript_include_tag 'application'
 		= csrf_meta_tag
 		= auto_discovery_link_tag :rss, writing_path(:format => :rss)
 	%body
 		#container
 			#content
 				%a{:href => "/"}
-					%img#profile_pic{:src => "/images/andy_brett.png"}
+					= image_tag "andy_brett.png", :id => "profile_pic"
 				%h1#summary 
 					%span#name 
 						%a{:href => "/"}

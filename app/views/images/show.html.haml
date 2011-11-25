@@ -2,7 +2,7 @@
 	- if @older_image.blank?
 		%img{ :src => "#{@image.image.url(:medium)}" }
 	- else
-		%a{ :href => images_url(@older_image.permalink) }	
+		%a{ :href => @image.image.url(:original), :class => "gallery_image" }	
 			%img{ :src => "#{@image.image.url(:medium)}" }
 	.clear.medium
 	- if @image.caption.present?
@@ -19,4 +19,4 @@
 		#older
 			= link_to "Older >", images_url(@older_image.permalink) unless @older_image.blank?
 :javascript
-	$("#photos").addClass('selected');			
+	$("#photos").addClass('selected');
