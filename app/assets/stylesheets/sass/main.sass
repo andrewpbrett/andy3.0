@@ -1,0 +1,243 @@
+$profile_pic_offset: 20px
+$dagny: #333F62
+$post-link: #0b4e00
+$light-gray: #C3C3C3
+
+html
+	background-color: #EBF2F8
+
+body
+	font-family: Helvetica
+	color: $dagny
+
+img
+	border: 0
+
+a
+	text-decoration: none
+	color: inherit
+
+a:-webkit-any-link
+	text-decoration: none
+	color: inherit
+
+.clear
+	clear: both
+
+.clear.small
+	height: 10px
+
+.clear.medium
+	height: 20px
+
+#container
+	margin-left: auto
+	margin-right: auto
+	margin-top: 30px	
+	width: 760px
+	height: 700px
+	padding: $profile_pic_offset
+	
+#content
+	border: 2px solid $dagny
+	img#profile_pic
+		float: left
+		margin-left: -$profile_pic_offset
+		margin-top: -$profile_pic_offset
+		
+h1
+	font:
+		size: 20px
+		weight: normal
+
+h1#summary
+	float: right
+	margin: 46px 10px
+	padding: 10px
+
+#name
+	font-weight: bold
+	
+#nav
+	font-size: 20px
+	float: right
+	margin: 10px 10px 0px
+	padding: 10px 10px 0px
+	ul
+		padding: 0
+		margin: 0
+		li
+			float: left
+			list-style: none
+			margin: 0px 10px
+		li.last
+			margin-right: 0px
+		li.selected
+			border-bottom: 2px solid $dagny
+
+#main_container
+	padding: 10px 20px
+	a
+		color: $post-link
+		font-weight: bold
+		
+#item_container
+	line-height: 22px
+
+	
+#post_container
+	min-height: 500px
+	width: 550px
+	margin-left: auto
+	margin-right: auto
+	margin-top: 20px
+	line-height: 28px
+	display: block
+	
+#welcome_container
+	width: 550px
+	margin-left: auto
+	margin-right: auto
+	margin-top: 20px
+	line-height: 20px
+	display: block
+
+#posts_container
+	padding: 10px 0px
+	margin: 0px
+	a
+		color: inherit
+		font-weight: normal
+	
+#updates_container
+	padding: 20px 0px
+	margin: 0px
+	
+#posts_header
+	font-weight: bold
+	
+.posts_subheader
+	font-weight: bold
+	
+#notfound_container
+	@extend #post_container
+	width: 520px
+	margin-top: 40px
+	text-align: center
+	
+#newpost_container
+	@extend #post_container
+	width: 630px
+	
+#flashnotice_container
+	@extend #newpost_container
+	min-height: 0
+	color: green
+
+h2#post_title
+	margin: 0
+	float: left
+	font-size: 20px
+	
+#post_date
+	margin: 0px
+	
+#post_header
+	#post_date
+		float: right
+
+#post_body
+	a
+		color: $post-link
+		font-weight: bold
+
+#updates_container
+	@extend #post_body
+	width: 500px
+	margin: auto
+	
+#newupdate_container
+	width: 500px
+	margin: auto
+		
+#footer
+	padding: 10px 0px
+	text-align: right
+	height: 30px
+	
+.image_thumbnail_container
+	margin: 14px
+	width: 150px
+	height: 150px
+	float: left
+	img
+		border: 1px solid $dagny
+		padding: 2px
+	
+.image_container
+	padding: 23px 9px
+	text-align: center
+	#image_nav
+		text-align: center
+		width: 250px
+		margin: 0 auto
+		div
+			float: left
+
+.image_caption
+	text-align: center
+
+.spacer
+	width: 20px
+	height: 1px
+			
+.bookmark_title
+	font-weight: bold
+
+.item_text
+	float: left
+	width: 600px
+	
+.item_title
+	float: left
+	padding: 0 10px
+		
+.item_timestamp
+	float: left
+	padding: 0 10px
+	
+.item_source_image
+	float: left
+
+.update_container
+	font-size: 18px
+
+.welcome_item
+	border-bottom: 1px solid $light-gray
+	padding: 20px
+	line-height: 26px
+
+.welcome_update
+	font-size: 18px
+	
+.welcome_image
+	padding: 20px 10px
+	width: 530px
+	
+.welcome_bookmark
+	font-size: 18px
+
+.image_wrapper
+	margin: auto
+
+.permalink
+	a
+		color: gray !important
+		font-size: 14px !important
+		font-weight: normal !important
+
+.image_thumbnail_wrapper
+	margin: auto
+	
+.image_date
+	float: right

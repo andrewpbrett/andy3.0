@@ -1,7 +1,7 @@
 - @images.each_with_index do |image, i|
 	.image_thumbnail_container
 		.image_thumbnail_wrapper
-			%a{ :href => images_url(image.permalink) }	
+			%a.gallery_image{ :href => image.image.url(:original), :rel => "gallery"}	
 				%img{ :src => "#{image.image.url(:small)}" }
 	- if i % 4 == 3
 		.clear

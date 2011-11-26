@@ -1,22 +1,10 @@
 .image_container
-	- if @older_image.blank?
+	%a{ :href => @image.image.url(:original), :class => "gallery_image" }	
 		%img{ :src => "#{@image.image.url(:medium)}" }
-	- else
-		%a{ :href => @image.image.url(:original), :class => "gallery_image" }	
-			%img{ :src => "#{@image.image.url(:medium)}" }
 	.clear.medium
 	- if @image.caption.present?
 		#image_caption
 			=raw @image.caption
 		.clear.medium
-	#image_nav
-		#newer
-			= link_to "< Newer", images_url(@newer_image.permalink) unless @newer_image.blank?	
-		.spacer
-		.permalink.image_date
-			= @image.published_at.strftime("%b %d, %Y")
-		.spacer
-		#older
-			= link_to "Older >", images_url(@older_image.permalink) unless @older_image.blank?
 :javascript
 	$("#photos").addClass('selected');
