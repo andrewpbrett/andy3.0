@@ -1,6 +1,8 @@
 class ApplicationController < ActionController::Base
   protect_from_forgery
   before_filter :store_location
+  before_filter :find_or_initialize, :only => 
+    [:show, :new, :create, :edit, :update]
     
   def index
     @page_title = "Andy Brett"
@@ -39,6 +41,19 @@ class ApplicationController < ActionController::Base
   end
     
   private
+  
+  def model_name
+    params[:controller].singularize
+  end
+  
+  def model_class
+    model_name.camelize.constantize
+  end
+  
+  def find_or_initialize
+    instance_variable_set "@#{model_name}", params[:id].nil? ? 
+      model_class.new : model_class.find(params[:id])
+  end
   
   def store_location
     session[:return_to] = nil

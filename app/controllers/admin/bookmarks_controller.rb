@@ -20,4 +20,13 @@ class Admin::BookmarksController < AdminController
       render :action => :new
     end
   end
+  
+  def edit
+  end
+  
+  def update
+    @bookmark.update_attributes(params[:bookmark])
+    flash[:notice] = @bookmark.errors.present? ? "Whoops!" : "Saved!"
+    redirect_to :action => :edit
+  end
 end

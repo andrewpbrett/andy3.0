@@ -1,2 +1,4 @@
 - @bookmarks.each do |b|
 	= render :partial => "bookmarks/show", :locals => { :b => b }
+	= link_to "Edit", edit_admin_bookmark_path(b)
+	.clear.medium

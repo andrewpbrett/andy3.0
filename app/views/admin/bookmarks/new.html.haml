@@ -1,23 +1,4 @@
-= form_for @bookmark, :url => { :action => :create } do |f|
-	URL
-	.clear
-	= f.text_field :url
-	.clear.medium
-	Title
-	.clear
-	= f.text_field :title
-	.clear.medium
-	Note
-	.clear
-	= f.text_field :note
-	.clear.medium
-	Tag list
-	.clear
-	= f.text_field :tag_list, :value => "\"public\""
-	.clear.medium
-	= render :partial => "tweet/tweet_field"
-	.clear.medium
-	= f.submit "Post"
+= render :partial => "admin/bookmarks/form", :locals => { :bookmark => @bookmark }
 :javascript
 	if($("#bookmark_url").val() != ""){
 		shorten($("#bookmark_url").val());
@@ -34,4 +15,4 @@
 	$("#bookmark_note").blur(function(){
 			$("#update_body").val($("#bookmark_note").val() + " : " + 
 														$("#update_body").val());
-		});		
+		});

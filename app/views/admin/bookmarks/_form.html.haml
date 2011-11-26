@@ -1,0 +1,21 @@
+- url = bookmark.new_record? ? admin_bookmarks_url : admin_bookmark_url(bookmark)
+= form_for bookmark, :url => url do |f|
+	URL
+	.clear
+	= f.text_field :url
+	.clear.medium
+	Title
+	.clear
+	= f.text_field :title
+	.clear.medium
+	Note
+	.clear
+	= f.text_area :note
+	.clear.medium
+	Tag list
+	.clear
+	= f.text_field :tag_list, :value => "\"public\""
+	.clear.medium
+	= render :partial => "tweet/tweet_field"
+	.clear.medium
+	= f.submit bookmark.new_record? ? "Post" : "Update"

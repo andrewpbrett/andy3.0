@@ -4,7 +4,6 @@ class Admin::PostsController < AdminController
   end  
   
   def new
-    @post = Post.new
   end
   
   def create
@@ -23,8 +22,6 @@ class Admin::PostsController < AdminController
   end
   
   def update
-    @post = Post.find(params[:id])
-
     if @post.update_attributes(params[:post])
       flash[:notice] = "Successfully updated"
     end    
