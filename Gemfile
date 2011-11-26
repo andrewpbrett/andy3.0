@@ -15,6 +15,8 @@ gem 'acts-as-taggable-on'
 gem 'json' 
 gem 'rubypants'
 gem 'jquery-rails'
+gem 'execjs'
+gem 'therubyracer'
 
 group :development do
 	gem 'ruby-debug'
