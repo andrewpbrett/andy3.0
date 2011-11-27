@@ -38,11 +38,14 @@ function alignImages(){
 	var wrappers = $(".image_wrapper.thumbnail");
 	for (var i = 0; i < wrappers.length - 1; i++) {
 		$(wrappers[i]).css("width", $(wrappers[i].children[0]).css("width"));
-		var s = $(wrappers[i]).css("height");
-		var height = s.substring(0, s.length - 2) - 0;
-		var margin = (150 - height)/2;
-		var mtop = margin + "px"
-		$(wrappers[i]).css("margin-top", mtop);
+		var heightString = $(wrappers[i]).css("height");
+		var height = heightString.substring(0, heightString.length - 2) - 0;
+		var marginTop = (150 - height)/2;
+		$(wrappers[i]).css("margin-top", marginTop + "px");
+		var widthString = $(wrappers[i]).css("width");
+		var width = widthString.substring(0, widthString.length - 2) - 0;
+		var marginLeft = (150 - width)/2;
+		$(wrappers[i]).css("margin-left", marginLeft + "px");
 	}
 }
 
