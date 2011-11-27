@@ -27,8 +27,8 @@ Andy30::Application.routes.draw do
   match 'latest' => 'updates#index'
   match '/bio' => redirect("/about")
   match 'writing' => 'posts#index'
-  match ':permalink' => 'posts#show'
   match 'blog' => 'posts#index'
+  match ':permalink' => 'posts#show'
   match 'images/tsa_blog.png' => redirect("/system/images/6/original/tsa_blog.png")  
   match 'images/tsa.jpg' => redirect("/system/images/5/original/TSA.jpg?1291511977")
   match 'photos/:permalink' => 'images#show', :as => :images
