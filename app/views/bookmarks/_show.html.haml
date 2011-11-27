@@ -1,7 +1,7 @@
 .bookmark
 	%a{ :href => b.url, :class => "bookmark_title" }
 		=raw RubyPants.new(b.title).to_html
-	.clear
+	.clear.medium
 	=raw RubyPants.new(b.note).to_html
 	.clear
 	.permalink
