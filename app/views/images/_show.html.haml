@@ -1,7 +1,8 @@
 - show_caption ||= false
+.permalink
+	= link_to image.created_at.strftime("%b %d"), image_path(image)
 .image_wrapper	
 	%a.gallery_image{ :href => image.image.url(:original) }	
 		%img{ :src => "#{image.image.url(:post)}" }
-- if show_caption
-	.image_caption
-		=raw RubyPants.new(image.caption).to_html
+.image_caption
+	=raw RubyPants.new(image.caption).to_html
