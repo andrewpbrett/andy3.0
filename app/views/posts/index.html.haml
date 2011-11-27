@@ -1,16 +1,15 @@
-#posts_container
-	#posts_container
-		- year = nil
-		- @posts.each do |post|
-			- unless post.published_at.year == year
-				- year = post.published_at.year
-				.posts_year
-					= year
-				.clear.medium
-			%a{ :href => "/#{post.permalink}" }
-				= post.title
-				\-
-				= post.published_at.strftime("%b %d")
+#posts
+	- year = nil
+	- @posts.each do |post|
+		- unless post.published_at.year == year
+			- year = post.published_at.year
+			.posts_year
+				= year
 			.clear.medium
+		%a{ :href => "/#{post.permalink}" }
+			= post.title
+			\-
+			= post.published_at.strftime("%b %d")
+		.clear.medium
 :javascript
 	$("#writing").addClass('selected');

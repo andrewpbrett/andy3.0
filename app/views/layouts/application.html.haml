@@ -12,8 +12,8 @@
 		= csrf_meta_tag
 		= auto_discovery_link_tag :rss, writing_path(:format => :rss)
 	%body
-		#header_container
-			#header
+		#header
+			#headline
 				%a{:href => "/"}
 					= image_tag "andy_brett.png", :id => "profile_pic"
 				%h1#summary 
@@ -22,12 +22,12 @@
 							Andy Brett 
 					is a writer, engineer, and athlete living in Silicon Valley
 			.clear
-		#nav_container
-			#nav
+		#nav_bar
+			#nav_list
 				%ul
 					%li#writing
 						%a{:href => "/writing"} Writing
-					%li#bookmarks
+					%li#bookmarks_nav
 						%a{:href => "/bookmarks"} Bookmarks
 					%li#projects
 						%a{:href => "/projects"} Projects
@@ -36,10 +36,9 @@
 					%li#about.last
 						%a{:href => "/about"} About
 			.clear
-		#body_container
-			#flashnotice_container
+		#canvas
+			#flashnotice
 				= flash[:notice]
-			#main_container
-				= yield
+			= yield
 		#footer
 		= render :partial => "application/analytics"

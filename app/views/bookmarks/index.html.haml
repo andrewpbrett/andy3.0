@@ -1,4 +1,4 @@
-#bookmarks_container
+#bookmarks
 	- @bookmarks.each do |b|
 		= render :partial => "show", :locals => { :b => b }
 		.clear.medium
@@ -7,4 +7,4 @@
 		my shared items on Google Reader
 	for items prior to Jan 2011.
 :javascript
-	$("#bookmarks").addClass('selected');
+	$("#bookmarks_nav").addClass('selected');

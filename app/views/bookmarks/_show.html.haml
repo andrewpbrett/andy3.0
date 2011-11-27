@@ -1,5 +1,5 @@
 .bookmark
-	%a{ :href => b.url, :class => "bookmark_title" }
+	%a.title{ :href => b.url }
 		=raw RubyPants.new(b.title).to_html
 	.clear.medium
 	- if b.note.present?

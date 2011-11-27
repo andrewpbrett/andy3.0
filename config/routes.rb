@@ -21,13 +21,13 @@ Andy30::Application.routes.draw do
   match 'logout' => 'user_sessions#destroy', :as => :logout
   match 'admin' => 'admin#index', :as => :admin
   match 'citingthetext' => redirect("/writing")
+  match 'blog' => redirect("/writing")
   match 'posts.atom' => redirect("/posts.rss")
   match 'posts' => 'posts#index'
   match 'photos' => 'images#index'
   match 'latest' => 'updates#index'
   match '/bio' => redirect("/about")
   match 'writing' => 'posts#index'
-  match 'blog' => 'posts#index'
   match ':permalink' => 'posts#show'
   match 'images/tsa_blog.png' => redirect("/system/images/6/original/tsa_blog.png")  
   match 'images/tsa.jpg' => redirect("/system/images/5/original/TSA.jpg?1291511977")
@@ -87,7 +87,7 @@ Andy30::Application.routes.draw do
 
   # You can have the root of your site routed with "root"
   # just remember to delete public/index.html.
-  root :to => "welcome#index"
+  root :to => "timeline#index"
 
   # See how all your routes lay out with "rake routes"
 

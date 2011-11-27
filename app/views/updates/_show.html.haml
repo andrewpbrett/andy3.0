@@ -1,3 +1,4 @@
-=raw linkify(RubyPants.new(update.body).to_html)
-.permalink
-	= link_to update.published_at.localtime.strftime("%b %d"), update_path(update)
+.update
+	=raw linkify(RubyPants.new(update.body).to_html)
+	.permalink
+		= link_to update.published_at.localtime.strftime("%b %d"), update_path(update)

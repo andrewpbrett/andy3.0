@@ -1,11 +1,4 @@
-.image_container
-	%a{ :href => @image.image.url(:original), :class => "gallery_image" }	
-		%img{ :src => "#{@image.image.url(:medium)}" }
-	.clear.medium
-	- if @image.caption.present?
-		#image_caption
-			=raw @image.caption
-		.clear.medium
+= render :partial => "show", :locals => { :image => @image }
 :javascript
 	$("#photos").addClass('selected');
 	$(document).ready(function(){

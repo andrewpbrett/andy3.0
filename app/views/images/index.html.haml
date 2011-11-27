@@ -1,22 +1,11 @@
-#images_container
+#images
 	- @images.each_with_index do |image, i|
-		.image_thumbnail_container
-			.image_thumbnail_wrapper
-				%a.gallery_image{ :title => image.caption, :href => image.image.url(:original), :rel => "gallery"}	
-					%img{ :src => "#{image.image.url(:small)}" }
+		= render :partial => "show", :locals => { :image => image, :size => :thumbnail }
 		- if i % 6 == 5
 			.clear
 	.clear
 	:javascript
 		$(window).load(function(){
-			$("#photos").addClass('selected');
-			var wrappers = $(".image_thumbnail_wrapper");
-			for (var i = 0; i < wrappers.length - 1; i++) {
-				$(wrappers[i]).css("width", $(wrappers[i].children[0].children[0]).css("width"));
-				var s = $(wrappers[i]).css("height");
-				var height = s.substring(0, s.length - 2) - 0;
-				var margin = (150 - height)/2;
-				var mtop = margin + "px"
-				$(wrappers[i]).css("margin-top", mtop);
-			}
+			selectPhotosNav();
+			alignImages();
 		});

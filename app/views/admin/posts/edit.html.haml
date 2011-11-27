@@ -1,4 +1,3 @@
-#item_container
-	#newpost_container
-		= form_for @post, :as => :post, :url => { :action => :update } do |f|
-			= render :partial => "post_form", :locals => { :f => f }
+.admin_form
+	= form_for @post, :as => :post, :url => { :action => :update } do |f|
+		= render :partial => "post_form", :locals => { :f => f }

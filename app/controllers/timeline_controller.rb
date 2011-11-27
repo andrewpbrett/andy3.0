@@ -1,4 +1,4 @@
-class WelcomeController < ApplicationController
+class TimelineController < ApplicationController
   def index
     @all_items = Post.recent_public_timeline | Update.recent_public_timeline |
       Image.recent_photostream | Bookmark.recent_public_timeline

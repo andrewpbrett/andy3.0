@@ -1,7 +1,6 @@
-#item_container
-	#updates_container
-		- @updates.each do |update|
-			=raw linkify(update.body)
-			\-
-			= link_to update.published_at.localtime.strftime("%b %d"), update_path(update)
-			.clear.medium
+#updates
+	- @updates.each do |update|
+		=raw linkify(update.body)
+		\-
+		= link_to update.published_at.localtime.strftime("%b %d"), update_path(update)
+		.clear.medium

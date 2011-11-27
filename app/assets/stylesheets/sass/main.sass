@@ -1,8 +1,10 @@
+// Variables
 $dagny: #333F62
-$post-link: #0b4e00
+$link: #0b4e00
 $light-gray: #C3C3C3
 $light-blue: #EBF2F8
 
+// Layout
 body
 	font-family: Helvetica
 	color: $dagny
@@ -13,11 +15,16 @@ img
 
 a
 	text-decoration: none
-	color: inherit
+	color: $link
 
 a:-webkit-any-link
 	text-decoration: none
-	color: inherit
+	color: $link
+	
+h1
+	font:
+		size: 20px
+		weight: normal	
 
 .clear
 	clear: both
@@ -33,30 +40,20 @@ blockquote
 	margin-left: 15px
 	padding-left: 15px
 	border-left: 2px solid $dagny
-
-#container
-	margin-left: auto
-	margin-right: auto
-	margin-top: 30px	
-	width: 760px
-	height: 700px
 	
-#header_container
+// Header and Nav Bar	
+	
+#header
 	padding-top: 10px
 	background-color: $light-blue
 	width: 100%
 	
-#header
+#headline
 	width: 800px
 	margin: auto
 	img#profile_pic
 		float: left
 		padding-bottom: 8px
-		
-h1
-	font:
-		size: 20px
-		weight: normal
 
 h1#summary
 	float: right
@@ -66,7 +63,7 @@ h1#summary
 #name
 	font-weight: bold
 	
-#nav_container
+#nav_bar
 	margin-top: -40px
 	border-bottom: 2px solid $dagny
 	width: 100%
@@ -75,7 +72,7 @@ h1#summary
 	position: fixed
 	top: 222px
 	
-#nav
+#nav_list
 	font-size: 20px
 	width: 76%
 	margin: auto 0px
@@ -92,178 +89,115 @@ h1#summary
 			margin-right: 0px
 		li.selected
 			border-bottom: 2px solid $dagny
-
-#main_container
-	padding: 0px 20px
 	a
-		color: $post-link
-		font-weight: bold
+		color: inherit
+		
+// Canvas and Content
+
+#flashnotice
+	@extend .text_container
+	color: green
+	font-weight: bold
+	min-height: 0
 	
-.small_container
+.permalink
+	a
+		color: gray !important
+		font-size: 14px !important
+		font-weight: normal !important	
+	
+.text_container
 	margin: auto
 	width: 600px
+	margin-top: 25px
 	
-#post_container
-	@extend .small_container
-	min-height: 500px
-	margin-top: 20px
-	line-height: 28px
-	display: block
-	
-#welcome_container
-	@extend .small_container
+#timeline
+	@extend .text_container
 	line-height: 20px
 	display: block
+	.update
+		@extend .timeline_item
+		font-size: 18px
+	.image, .bookmark, .post
+		@extend .timeline_item
+		margin-top: 0px
 
-#posts_container
-	@extend .small_container
+.timeline_item
+	border-bottom: 1px solid $light-gray
+	padding: 20px
+	line-height: 26px
+
+#posts
+	@extend .text_container
 	line-height: 22px
 	padding: 10px 0px
 	a
 		color: inherit
 		font-weight: normal
 
-#images_container
-	width: 1072px
-	margin: auto
-	
-#updates_container
-	padding: 20px 0px
-	margin: 0px
-	
-#bookmarks_container
-	@extend .small_container
-	padding-top: 20px
-	.bookmark
-		border-bottom: 1px solid $light-gray
-		padding-bottom: 14px
-	
-#posts_header
-	font-weight: bold
-	
 .posts_year
 	font-weight: bold
 	border-bottom: 1px solid $dagny
-	padding-bottom: 14px
-	
-#notfound_container
-	@extend .small_container
-	margin-top: 40px
-	text-align: center
-	
-#newpost_container
-	@extend .small_container
-	width: 630px
-	
-#flashnotice_container
-	@extend .small_container
-	min-height: 0
-	color: green
+	padding-bottom: 14px		
+		
+.post
+	@extend .text_container
+	line-height: 28px
+	.permalink
+		margin: 0px
+	.title
+		float: left
+		font-size: 20px
+		margin: 12px 0px
 
-h2#post_title
-	margin: 0
-	float: left
-	font-size: 20px
-	
-#post_date
-	margin: 0px
-	
-#post_header
-	#post_date
-		float: right
-
-#post_body
+.post_body
 	a
-		color: $post-link
 		font-weight: bold
 
-#updates_container
-	@extend #post_body
-	width: 500px
+#images
+	width: 1072px
 	margin: auto
+	.image
+		float: left
 	
-#newupdate_container
-	width: 500px
+.image
+	.image_wrapper.thumbnail
+		margin: 14px
+		width: 150px
+		height: 150px
+		float: left
+		img
+			border: 1px solid $dagny
+			padding: 2px
+
+.image_wrapper
 	margin: auto
+	text-align: center
+	
+#updates
+	@extend .text_container
+	padding-top: 20px
+
+.update
+	@extend text_container
+		
+#bookmarks
+	@extend .text_container
+	.bookmark
+		margin-top: 0px
+		border-bottom: 1px solid $light-gray
+		padding-bottom: 14px
+
+.bookmark
+	@extend .text_container
+	.title
+		font-weight: bold
+	
+.admin_form
+	@extend .text_container
+	width: 630px
 		
 #footer
 	padding: 10px 0px
 	text-align: right
 	height: 30px
-	
-.image_thumbnail_container
-	margin: 14px
-	width: 150px
-	height: 150px
-	float: left
-	img
-		border: 1px solid $dagny
-		padding: 2px
-	
-.image_container
-	padding: 23px 9px
-	text-align: center
-	#image_nav
-		text-align: center
-		width: 250px
-		margin: 0 auto
-		div
-			float: left
-
-.image_caption
-	text-align: center
-
-.spacer
-	width: 20px
-	height: 1px
-			
-.bookmark_title
-	font-weight: bold
-
-.item_text
-	float: left
-	width: 600px
-	
-.item_title
-	float: left
-	padding: 0 10px
-		
-.item_timestamp
-	float: left
-	padding: 0 10px
-	
-.item_source_image
-	float: left
-
-.update_container
-	font-size: 18px
-
-.welcome_item
-	border-bottom: 1px solid $light-gray
-	padding: 20px
-	line-height: 26px
-
-.welcome_update
-	font-size: 18px
-	
-.welcome_image
-	padding: 20px
-	
-.welcome_bookmark
-	font-size: 18px
-
-.image_wrapper
-	margin: auto
-	text-align: center
-
-.permalink
-	a
-		color: gray !important
-		font-size: 14px !important
-		font-weight: normal !important
-
-.image_thumbnail_wrapper
-	margin: auto
-	
-.image_date
-	float: right

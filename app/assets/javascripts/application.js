@@ -20,13 +20,29 @@ $(document).ready(function(){
 
 function adjustNav(){
 	if(window.pageYOffset > 185){
-		$("#nav_container").css("top", "0px");
-		$("#nav_container").css("margin-top", "0px");
+		$("#nav_bar").css("top", "0px");
+		$("#nav_bar").css("margin-top", "0px");
 	}
 	else{
 		height = 222 - window.pageYOffset;
-		$("#nav_container").css("top", height + "px");
-		$("#nav_container").css("margin-top", "-40px");
+		$("#nav_bar").css("top", height + "px");
+		$("#nav_bar").css("margin-top", "-40px");
+	}
+}
+
+function selectPhotosNav(){
+	$("#photos").addClass('selected');	
+}
+
+function alignImages(){
+	var wrappers = $(".image_wrapper.thumbnail");
+	for (var i = 0; i < wrappers.length - 1; i++) {
+		$(wrappers[i]).css("width", $(wrappers[i].children[0]).css("width"));
+		var s = $(wrappers[i]).css("height");
+		var height = s.substring(0, s.length - 2) - 0;
+		var margin = (150 - height)/2;
+		var mtop = margin + "px"
+		$(wrappers[i]).css("margin-top", mtop);
 	}
 }
 
