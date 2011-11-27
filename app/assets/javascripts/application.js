@@ -19,7 +19,7 @@ $(document).ready(function(){
 });
 
 function adjustNav(){
-	if(window.pageYOffset > 192){
+	if(window.pageYOffset > 185){
 		$("#nav_container").css("top", "0px");
 		$("#nav_container").css("margin-top", "0px");
 	}
