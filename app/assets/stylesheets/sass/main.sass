@@ -89,25 +89,25 @@ h1#summary
 		color: $post-link
 		font-weight: bold
 	
-#post_container
-	min-height: 500px
+.small_container
+	margin: auto
 	width: 600px
-	margin-left: auto
-	margin-right: auto
+	
+#post_container
+	@extend .small_container
+	min-height: 500px
 	margin-top: 20px
 	line-height: 28px
 	display: block
 	
 #welcome_container
-	width: 600px
-	margin: auto
+	@extend .small_container
 	line-height: 20px
 	display: block
 
 #posts_container
+	@extend .small_container
 	line-height: 22px
-	width: 600px
-	margin: auto
 	padding: 10px 0px
 	a
 		color: inherit
@@ -121,24 +121,32 @@ h1#summary
 	padding: 20px 0px
 	margin: 0px
 	
+#bookmarks_container
+	@extend .small_container
+	padding-top: 20px
+	.bookmark
+		border-bottom: 1px solid $light-gray
+		padding-bottom: 14px
+	
 #posts_header
 	font-weight: bold
 	
-.posts_subheader
+.posts_year
 	font-weight: bold
+	border-bottom: 1px solid $dagny
+	padding-bottom: 14px
 	
 #notfound_container
-	@extend #post_container
-	width: 520px
+	@extend .small_container
 	margin-top: 40px
 	text-align: center
 	
 #newpost_container
-	@extend #post_container
+	@extend .small_container
 	width: 630px
 	
 #flashnotice_container
-	@extend #newpost_container
+	@extend .small_container
 	min-height: 0
 	color: green
 

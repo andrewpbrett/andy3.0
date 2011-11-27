@@ -1,13 +1,10 @@
 #posts_container
-	All
-	= @posts.size
-	posts:
 	#posts_container
 		- year = nil
 		- @posts.each do |post|
 			- unless post.published_at.year == year
 				- year = post.published_at.year
-				.posts_subheader
+				.posts_year
 					= year
 				.clear.medium
 			%a{ :href => "/#{post.permalink}" }
@@ -15,7 +12,5 @@
 				\-
 				= post.published_at.strftime("%b %d")
 			.clear.medium
-		.posts_subheader
-			= link_to "RSS", writing_path(:format => :rss)
 :javascript
 	$("#writing").addClass('selected');
