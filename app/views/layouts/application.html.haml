@@ -12,8 +12,8 @@
 		= csrf_meta_tag
 		= auto_discovery_link_tag :rss, writing_path(:format => :rss)
 	%body
-		#container
-			#content
+		#header_container
+			#header
 				%a{:href => "/"}
 					= image_tag "andy_brett.png", :id => "profile_pic"
 				%h1#summary 
@@ -34,9 +34,10 @@
 						%li#about.last
 							%a{:href => "/about"} About							
 				.clear
-				#flashnotice_container
-					= flash[:notice]
-				#main_container
-					= yield
-			#footer
+		#body_container
+			#flashnotice_container
+				= flash[:notice]
+			#main_container
+				= yield
+		#footer
 		= render :partial => "application/analytics"
