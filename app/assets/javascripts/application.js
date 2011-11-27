@@ -4,6 +4,17 @@
 //= require_tree .
 $(document).ready(function(){
 	$("a.gallery_image").fancybox();
+	$(window).scroll(function (){
+		if($("body").scrollTop() > 197){
+			$("#nav_container").css("top", "0px");
+			$("#nav_container").css("margin-top", "0px");
+		}
+		else{
+			height = 222 - $("body").scrollTop();
+			$("#nav_container").css("top", height + "px");
+			$("#nav_container").css("margin-top", "-40px");
+		}
+	});
 	var e = document.getElementById('update_body'),
 	    f = document.getElementById('counter');
 
