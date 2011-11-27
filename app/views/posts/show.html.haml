@@ -1,3 +1,4 @@
 = render :partial => "show", :locals => { :post => @post }
-:javascript
-	$("#writing").addClass('selected');
+- unless @post.permalink == "about" or @post.permalink == "projects"
+	:javascript
+		$("#writing").addClass('selected');
