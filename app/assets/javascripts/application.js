@@ -19,12 +19,12 @@ $(document).ready(function(){
 });
 
 function adjustNav(){
-	if($("body").scrollTop() > 197){
+	if(window.pageYOffset > 197){
 		$("#nav_container").css("top", "0px");
 		$("#nav_container").css("margin-top", "0px");
 	}
 	else{
-		height = 222 - $("body").scrollTop();
+		height = 222 - window.pageYOffset;
 		$("#nav_container").css("top", height + "px");
 		$("#nav_container").css("margin-top", "-40px");
 	}
