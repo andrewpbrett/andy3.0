@@ -15,7 +15,7 @@ module ApplicationHelper
       render :partial => "updates/show", :locals => { :update => object }
     elsif object.is_a? Image
       render :partial => "images/show", :locals => 
-        { :image => object, :show_caption => true }
+        { :image => object, :show_caption => true, :show_permalink => true }
     elsif object.is_a? Bookmark
       render :partial => "bookmarks/show", :locals => { :b => object }
     end
