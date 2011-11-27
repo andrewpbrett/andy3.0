@@ -1,6 +1,6 @@
 - show_caption ||= false
 .permalink
-	= link_to image.created_at.strftime("%b %d"), images_path(image)
+	= link_to image.created_at.strftime("%b %d"), images_path(image.permalink)
 	.clear.medium
 .image_wrapper	
 	%a.gallery_image{ :href => image.image.url(:original) }	
