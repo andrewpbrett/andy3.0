@@ -6,3 +6,4 @@ config/database.yml
 config/pwd.yml
 public/system/images/*
 stats*
+config/initializers/secret_token.rb

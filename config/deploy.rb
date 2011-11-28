@@ -39,6 +39,10 @@ namespace :deploy do
   task :pwdconfig do
     run "cp #{shared_path}/config/pwd.yml #{current_path}/config/pwd.yml"
   end
+  desc "Copy secret token"
+  task :secret_token do
+    run "cp #{shared_path}/config/initializers/secret_token.rb #{current_path}/config/initializers/secret_token.rb"
+  end
   desc "Symlink uploads directory"
   task :symlink_uploads do
     run "rm -rf #{current_path}/uploads"
@@ -50,6 +54,7 @@ after "deploy:update_code", "deploy:chown"
 after "deploy", "deploy:dbconfig"
 after "deploy", "deploy:pwdconfig"
 after "deploy", "deploy:symlink_uploads"
+after "deploy", "deploy:secret_token"
 
 namespace :images do
   namespace :sync do
