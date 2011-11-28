@@ -1,6 +1,6 @@
 #images
 	- @images.each_with_index do |image, i|
-		= render :partial => "show", :locals => { :image => image, :size => :small }
+		= render :partial => "show", :locals => { :image => image, :size => :small, :show_caption => true }
 		- if i % 6 == 5
 			.clear
 	.clear
