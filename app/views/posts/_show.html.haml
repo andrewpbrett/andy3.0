@@ -11,4 +11,4 @@
 	.post_body
 		=raw show_excerpt ? RubyPants.new(post.smart_excerpt).to_html : RubyPants.new(post.body).to_html
 		- if show_excerpt
-			= link_to "Continued...", post.permalink
+			= link_to "Continued", post.permalink

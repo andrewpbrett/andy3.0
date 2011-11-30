@@ -1,12 +1,12 @@
 // Variables
 $dagny: #333F62
-$link: #0b4e00
 $light-gray: #C3C3C3
 $light-blue: #EBF2F8
 
 // Layout
 body
-	font-family: Helvetica
+	font-family: Helvetica Neue, Helvetica, Arial, sans-serif
+	font-weight: 300
 	color: $dagny
 	margin: 0
 
@@ -15,12 +15,14 @@ img
 
 a
 	text-decoration: none
-	color: $link
+	color: inherit
+	font-weight: 500
 
 a:-webkit-any-link
 	text-decoration: none
-	color: $link
-	
+	color: inherit
+	font-weight: 500
+		
 h1
 	font:
 		size: 20px
@@ -49,16 +51,16 @@ blockquote
 	width: 100%
 	
 #headline
-	width: 800px
+	width: 900px
 	margin: auto
 	img#profile_pic
 		float: left
 		padding-bottom: 8px
 
 h1#summary
-	float: right
+	float: left
 	margin: 46px 10px
-	padding: 10px
+	padding: 10px 32px
 
 #name
 	font-weight: bold
@@ -74,7 +76,7 @@ h1#summary
 	
 #nav_list
 	font-size: 20px
-	width: 76%
+	width: 880px
 	margin: auto 0px
 	padding: 0px
 	ul
@@ -135,9 +137,11 @@ h1#summary
 	@extend .text_container
 	line-height: 22px
 	padding: 10px 0px
+	div
+		margin: 0px 20px
 	a
 		color: inherit
-		font-weight: normal
+		font-weight: 300
 
 .posts_year
 	font-weight: bold
@@ -148,13 +152,16 @@ h1#summary
 	@extend .text_container
 	line-height: 28px
 	.permalink
+		padding: 0px 20px
 		margin: 0px
 	.title
+		padding: 0px 20px	
 		float: left
 		font-size: 20px
 		margin: 12px 0px
 
 .post_body
+	padding: 0px 20px
 	a
 		font-weight: bold
 
@@ -189,7 +196,7 @@ h1#summary
 	.bookmark
 		margin-top: 0px
 		border-bottom: 1px solid $light-gray
-		padding-bottom: 14px
+		padding: 20px
 
 .bookmark
 	@extend .text_container

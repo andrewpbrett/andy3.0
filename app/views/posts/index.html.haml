@@ -6,10 +6,11 @@
 			.posts_year
 				= year
 			.clear.medium
-		%a{ :href => "/#{post.permalink}" }
-			= post.title
-			\-
-			= post.published_at.strftime("%b %d")
+		.title
+			%a{ :href => "/#{post.permalink}" }
+				= post.title
+				\-
+				= post.published_at.strftime("%b %d")
 		.clear.medium
 :javascript
 	$("#writing").addClass('selected');
