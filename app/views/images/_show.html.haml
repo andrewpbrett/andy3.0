@@ -7,7 +7,7 @@
 			= link_to image.published_at.strftime("%b %d"), images_path(image.permalink)
 			.clear.medium
 	.image_wrapper{ :class => size == :small ? "thumbnail" : "" }
-		%a.gallery_image{ :href => image.image.url(:original), :rel => "gallery", :title => image.caption }	
+		%a.gallery_image{ :href => image.image.url(:original), :rel => "gallery", :title => image.caption || "" + "<div class='permalink'>#{link_to image.published_at.strftime("%b %d"), images_path(image.permalink)}</div>" }
 			%img{ :src => "#{image.image.url(size)}" }
 	- if show_caption
 		.caption
