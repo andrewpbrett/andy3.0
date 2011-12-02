@@ -1,4 +1,4 @@
-= render :partial => "show", :locals => { :image => @image }
+= render :partial => "show", :locals => { :image => @image, :show_caption => true, :show_permalink => true }
 :javascript
 	$("#photos").addClass('selected');
 	$(document).ready(function(){
