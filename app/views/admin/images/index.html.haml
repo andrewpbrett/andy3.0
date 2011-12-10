@@ -3,6 +3,7 @@
 		= render :partial => "images/show", :locals => { :image => image, :size => :small }
 		- if i % 6 == 5
 			.clear
+		= link_to "Edit", edit_admin_image_url(i)
 	.clear
 	:javascript
 		$(window).load(function(){
