@@ -5,8 +5,6 @@ class ImagesController < ApplicationController
       render :template => "application/notfound"
       @page_title = "Andy Brett"
     else
-      @newer_image = @image.newer_photo
-      @older_image = @image.older_photo    
       @page_title = "Andy Brett | Photo: #{@image.permalink.titleize}"
     end
   end

@@ -1,6 +1,11 @@
-- @images.each do |i|
+#images
+	- @images.each_with_index do |image, i|
+		= render :partial => "images/show", :locals => { :image => image, :size => :small }
+		- if i % 6 == 5
+			.clear
 	.clear
-	= i.permalink
-	.clear
-	= i.image.url(:post)
-	.clear.medium
+	:javascript
+		$(window).load(function(){
+			selectPhotosNav();
+			alignImages();
+		});

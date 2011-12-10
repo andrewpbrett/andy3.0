@@ -1,15 +1,16 @@
-= form_for @user_session, :as => :user_session, :url => { :action => :create } do |f|
-	.clear.medium
-	= f.label :login
-	.clear
-	= f.text_field :login
-	.clear
-	= f.label :password
-	.clear
-	= f.password_field :password
-	.clear.medium
-	= f.submit "Login"
-:javascript
-	$(document).ready(function(){
-	  $("#user_session_login").focus();
-	});
+.admin_form
+	= form_for @user_session, :as => :user_session, :url => { :action => :create } do |f|
+		.clear.medium
+		= f.label :login
+		.clear
+		= f.text_field :login
+		.clear
+		= f.label :password
+		.clear
+		= f.password_field :password
+		.clear.medium
+		= f.submit "Login"
+	:javascript
+		$(document).ready(function(){
+		  $("#user_session_login").focus();
+		});

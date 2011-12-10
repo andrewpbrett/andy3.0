@@ -1,0 +1,30 @@
+.admin_form
+	= form_for image, :as => :image, :url => { :action => image.new_record? ? :create : :update }, :html => {:multipart => true} do |f|
+		= check_box :public_tag, nil, :name => "public_tag", :id => "public_tag", :checked => image.tag_list.include?("public")
+		%label{ :for => "public_tag" }
+			Public tag
+		.clear.medium
+		= check_box :photostream_tag, nil, :name => "photostream_tag", :id => "photostream_tag", :checked => image.tag_list.include?("photostream")
+		%label{ :for => "photostream_tag" }
+			Photostream tag
+		.clear.medium
+		= f.label :permalink
+		= f.text_field :permalink
+		.clear.medium
+		= f.file_field :image
+		.clear.medium
+		Published date:
+		= f.date_select :published_at
+		.clear.medium
+		Caption
+		= f.text_field :caption
+		.clear.medium
+		= render :partial => "tweet/tweet_field"
+		.clear.medium	
+		= f.submit
+	:javascript
+		$("#image_caption").blur(function(){
+				$("#update_body").val($("#image_caption").val() + " : " + 
+															$("#update_body").val());
+		});
+		$("#image_permalink").blur(function(){shorten("http://andybrett.com/photos/" + $("#image_permalink").val());});
