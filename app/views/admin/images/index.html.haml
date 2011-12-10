@@ -1,9 +1,8 @@
 #images
 	- @images.each_with_index do |image, i|
-		= render :partial => "images/show", :locals => { :image => image, :size => :small }
+		= render :partial => "images/show", :locals => { :image => image, :size => :small, :show_edit_link => true }
 		- if i % 6 == 5
 			.clear
-		= link_to "Edit", edit_admin_image_url(i)
 	.clear
 	:javascript
 		$(window).load(function(){

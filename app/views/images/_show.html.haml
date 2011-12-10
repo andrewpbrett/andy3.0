@@ -1,6 +1,7 @@
 - size ||= :post
 - show_permalink ||= false
 - show_caption ||= false
+- show_edit_link ||= false
 .image
 	- if show_permalink
 		.permalink
@@ -12,3 +13,5 @@
 	- if show_caption
 		.caption
 			=raw RubyPants.new(image.caption || "").to_html
+	- if show_edit_link
+		= link_to "Edit", edit_admin_image_url(image)
