@@ -1,4 +1,5 @@
-= render :partial => "admin/bookmarks/form", :locals => { :bookmark => @bookmark }
+.admin_form
+	= render :partial => "admin/bookmarks/form", :locals => { :bookmark => @bookmark }
 :javascript
 	if($("#bookmark_url").val() != ""){
 		shorten($("#bookmark_url").val());
