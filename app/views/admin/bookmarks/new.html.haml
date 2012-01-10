@@ -1,8 +1,9 @@
 .admin_form
 	= render :partial => "admin/bookmarks/form", :locals => { :bookmark => @bookmark }
 :javascript
-	if($("#bookmark_url").val() != ""){
-		shorten($("#bookmark_url").val());
+	$("#bookmark_permalink").blur(function(){shorten("http://andybrett.com/bookmarks/" + $("#bookmark_permalink").val());});
+	if($("#bookmark_permalink").val() != ""){
+		shorten($("#bookmark_permalink").val());
 	}
 	if($("#bookmark_title").val() != ""){
 		$("#update_body").val($("#bookmark_title").val() + " : " + 

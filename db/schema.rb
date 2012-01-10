@@ -10,7 +10,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20110216190843) do
+ActiveRecord::Schema.define(:version => 20120110222812) do
 
   create_table "bookmarks", :force => true do |t|
     t.string   "url"
@@ -18,6 +18,7 @@ ActiveRecord::Schema.define(:version => 20110216190843) do
     t.text     "note"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.string   "permalink"
   end
 
   create_table "images", :force => true do |t|

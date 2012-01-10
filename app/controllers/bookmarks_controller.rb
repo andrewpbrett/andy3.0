@@ -5,6 +5,7 @@ class BookmarksController < ApplicationController
   end
   
   def show
+    @bookmark = Bookmark.find_by_permalink(params[:id]) unless @bookmark
     @page_title = "Andy Brett | Bookmarks"    
   end
 end

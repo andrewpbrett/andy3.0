@@ -6,7 +6,7 @@ class PostsController < ApplicationController
   
   def show
     @post = Post.find_by_permalink(params[:permalink])
-    if !@post || (!@post.public && current_user != User.andy)
+    if !@post.public && current_user != User.andy
       render :template => "application/notfound"
       @page_title = "Andy Brett"
     else

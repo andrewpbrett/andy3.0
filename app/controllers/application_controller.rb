@@ -51,8 +51,10 @@ class ApplicationController < ActionController::Base
   end
   
   def find_or_initialize
-    instance_variable_set "@#{model_name}", params[:id].nil? ? 
-      model_class.new : model_class.find(params[:id])
+    i = model_class.find_by_id(params[:id]) if params[:id].present?
+    instance_variable_set "@#{model_name}", params[:id].nil? ? model_class.new : i
+    render :template => "application/notfound" and return if 
+      (params[:permalink].present? or params[:id].present?) and i.blank?
   end
   
   def store_location
