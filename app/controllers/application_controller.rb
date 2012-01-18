@@ -52,8 +52,8 @@ class ApplicationController < ActionController::Base
   
   def find_or_initialize
     i = model_class.find_by_id(params[:id]) if params[:id].present?
-    i = model_class.find_by_permalink(params[:id]) if i.blank?
-    i = model_class.find_by_permalink(params[:permalink]) if i.blank?    
+    i = model_class.find_by_permalink(params[:id]) if i.blank? and params[:id].present?
+    i = model_class.find_by_permalink(params[:permalink]) if i.blank? and params[:permalink].present?
     instance_variable_set "@#{model_name}", params[:id].nil? ? model_class.new : i
     render :template => "application/notfound" and return if 
       (params[:permalink].present? or params[:id].present?) and i.blank?
